@@ -41,12 +41,11 @@ const convertFont = (taskName, extension) => {
   const errorMessage = notifier.errorHandler(taskName);
 
   if (existsSync(fontFacesFile) && existsSync(woff2)) {
-    return src(woff2)
-      .pipe(errorMessage)
-      .pipe(dest(fontsBuild));
+    return src(woff2).pipe(errorMessage).pipe(dest(fontsBuild));
   }
 
-  const selectPlugin = extension === 'otf' ? fonter({ formats: ['ttf'] }) : ttf2woff2();
+  const selectPlugin =
+    extension === 'otf' ? fonter({ formats: ['ttf'] }) : ttf2woff2();
 
   return src(join(fontsSrc, `*.${extension}`))
     .pipe(errorMessage)

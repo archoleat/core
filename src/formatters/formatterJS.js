@@ -30,13 +30,14 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-const formatterJS = (taskName, config) => src(jsSrc)
-  .pipe(notifier.errorHandler(taskName))
-  .pipe(
-    webpack({
-      config,
-    }),
-  )
-  .pipe(dest(jsBuild));
+const formatterJS = (taskName, config) =>
+  src(jsSrc)
+    .pipe(notifier.errorHandler(taskName))
+    .pipe(
+      webpack({
+        config,
+      }),
+    )
+    .pipe(dest(jsBuild));
 
 export default formatterJS;

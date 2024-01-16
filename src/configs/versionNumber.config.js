@@ -14,7 +14,7 @@ const versionNumberConfig = {
   append: {
     key: 'v',
     cover: 0,
-    to: ['css', 'js', ...assets ?? []],
+    to: ['css', 'js', ...(assets ?? [])],
   },
   output: {
     file: versionFile,

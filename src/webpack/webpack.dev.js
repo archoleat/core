@@ -12,9 +12,7 @@ import serverConfig from './webpack.server.js';
 
 const {
   entry,
-  server: {
-    port, publicFolder, sourceMapType, stats, watchFiles,
-  },
+  server: { port, publicFolder, sourceMapType, stats, watchFiles },
 } = PROJECT_CONFIG;
 const {
   ASSETS_FOLDER,
@@ -57,16 +55,19 @@ export default {
   devServer: serverConfig({
     port,
     publicFolder,
-    watchFiles: [imagesSrc, jsonSrc, markdownSrc, pugSrc, ...watchFiles ?? []],
+    watchFiles: [imagesSrc, jsonSrc, markdownSrc, pugSrc, ...(watchFiles ?? [])],
   }),
   plugins: [
-    ...pugPages.map((pugPage) => new HtmlWebpackPlugin({
-      filename: pugPage.replace(PUG_EXTENSION_REGEX, HTML_EXTENSION),
-      inject: false,
-      minify: false,
-      production: false,
-      template: join(SRC_FOLDER, PAGES_FOLDER, pugPage),
-    })),
+    ...pugPages.map(
+      (pugPage) =>
+        new HtmlWebpackPlugin({
+          filename: pugPage.replace(PUG_EXTENSION_REGEX, HTML_EXTENSION),
+          inject: false,
+          minify: false,
+          production: false,
+          template: join(SRC_FOLDER, PAGES_FOLDER, pugPage),
+        }),
+    ),
     new CopyPlugin({
       patterns: [
         {
