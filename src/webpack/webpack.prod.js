@@ -1,8 +1,8 @@
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-import PATHS from '../../settings/paths.js';
-import HELPERS from '../../settings/helpers.js';
-import PLUGINS from '../../settings/plugins.js';
+import PATHS from '../settings/paths.js';
+import HELPERS from '../settings/helpers.js';
+import PLUGINS from '../settings/plugins.js';
 
 import CSSLoaderConfig from '../configs/CSSLoader.config.js';
 import outputConfig from '../configs/output.config.js';

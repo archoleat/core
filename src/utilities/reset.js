@@ -16,8 +16,8 @@
 //
 /// /////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../../settings/paths.js';
-import PLUGINS from '../../settings/plugins.js';
+import PATHS from '../settings/paths.js';
+import PLUGINS from '../settings/plugins.js';
 
 import PROJECT_CONFIG from '../configs/project.config.js';
 
