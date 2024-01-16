@@ -16,6 +16,7 @@
 //
 /// /////////////////////////////////////////////////////////////////////////
 
-const trimString = (string, regex) => string?.toString().replace(regex, '').toLowerCase();
+const trimString = (string, regex) =>
+  string?.toString().replace(regex, '').toLowerCase();
 
 export default trimString;

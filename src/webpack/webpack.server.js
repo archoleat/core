@@ -1,8 +1,4 @@
-const serverConfig = ({
-  port = 3000,
-  publicFolder = 'dist',
-  watchFiles = [],
-}) => ({
+const serverConfig = ({ port = 3000, publicFolder = 'dist', watchFiles = [] }) => ({
   port,
   watchFiles,
   hot: 'only',

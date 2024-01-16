@@ -24,10 +24,7 @@ import imageMinConfig from '../../configs/imageMin.config.js';
 
 const {
   build: { images: imagesBuild },
-  src: {
-    images: imagesSrc,
-    svg: svgSrc,
-  },
+  src: { images: imagesSrc, svg: svgSrc },
 } = PATHS;
 const { notifier } = HELPERS;
 const {
@@ -38,16 +35,17 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-const imageHandler = (isWebp) => src(imagesSrc)
-  .pipe(notifier.errorHandler('imageHandler'))
-  .pipe(newer(imagesBuild))
-  .pipe(when(isWebp, webp()))
-  .pipe(when(isWebp, dest(imagesBuild)))
-  .pipe(when(isWebp, src(imagesSrc)))
-  .pipe(when(isWebp, newer(imagesBuild)))
-  .pipe(imageMin(imageMinConfig))
-  .pipe(dest(imagesBuild))
-  .pipe(src(svgSrc))
-  .pipe(dest(imagesBuild));
+const imageHandler = (isWebp) =>
+  src(imagesSrc)
+    .pipe(notifier.errorHandler('imageHandler'))
+    .pipe(newer(imagesBuild))
+    .pipe(when(isWebp, webp()))
+    .pipe(when(isWebp, dest(imagesBuild)))
+    .pipe(when(isWebp, src(imagesSrc)))
+    .pipe(when(isWebp, newer(imagesBuild)))
+    .pipe(imageMin(imageMinConfig))
+    .pipe(dest(imagesBuild))
+    .pipe(src(svgSrc))
+    .pipe(dest(imagesBuild));
 
 export default imageHandler;

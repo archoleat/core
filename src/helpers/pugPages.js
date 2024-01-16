@@ -28,6 +28,8 @@ const {
 } = PLUGINS;
 const { PUG_EXTENSION } = REGEXPS;
 
-const pugPages = readdirSync(join(SRC_FOLDER, PAGES_FOLDER)).filter((extension) => extension.endsWith(PUG_EXTENSION));
+const pugPages = readdirSync(join(SRC_FOLDER, PAGES_FOLDER)).filter((extension) =>
+  extension.endsWith(PUG_EXTENSION),
+);
 
 export default pugPages;
