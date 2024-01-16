@@ -1,9 +1,11 @@
 {
   "exclude": [
     ".releaserc.json",
+    ".stylelintrc.json",
     "CHANGELOG.md",
     "config.yml",
     "CONTRIBUTING.md",
+    "generateFontFace.js",
     "PULL_REQUEST_TEMPLATE.md",
     "README.md"
   ]

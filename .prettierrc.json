@@ -1,7 +1,7 @@
 {
   "overrides": [
     {
-      "files": ["*.ts", "*.yml"],
+      "files": ["*.js", "*.yml"],
       "options": {
         "singleQuote": true
       }
