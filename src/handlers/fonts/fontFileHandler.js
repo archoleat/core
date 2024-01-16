@@ -19,7 +19,7 @@
 import PATHS from '../../settings/paths.js';
 import HELPERS from '../../settings/helpers.js';
 
-import generateFontFace from '../../../generators/generateFontFace.js';
+import generateFontFace from '../../generators/generateFontFace.js';
 
 const { fontFacesFile } = PATHS;
 const {

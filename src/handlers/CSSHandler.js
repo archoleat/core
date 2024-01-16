@@ -20,9 +20,10 @@ import PATHS from '../settings/paths.js';
 import HELPERS from '../settings/helpers.js';
 import PLUGINS from '../settings/plugins.js';
 
-import webpCSSConfig from '../../configs/webpCSS.config.js';
+import webpCSSConfig from '../configs/webpCSS.config.js';
 
 const {
+  CSS_COMB_CONFIG_FILE,
   build: { css: cssBuild },
 } = PATHS;
 const { notifier } = HELPERS;
@@ -43,7 +44,7 @@ const CSSHandler = (isWebp) =>
     .pipe(notifier.errorHandler('CSSHandler'))
     .pipe(groupCssMediaQueries())
     .pipe(when(isWebp, webpCss(webpCSSConfig)))
-    .pipe(cssComb({}))
+    .pipe(cssComb({ configPath: CSS_COMB_CONFIG_FILE }))
     .pipe(autoPrefixer())
     .pipe(dest(cssBuild))
     .pipe(cleanCss({ level: 2 }))
