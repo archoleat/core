@@ -1,7 +1,6 @@
 {
   "exclude": [
     ".releaserc.json",
-    ".stylelintrc.json",
     "CHANGELOG.md",
     "config.yml",
     "CONTRIBUTING.md",
