@@ -1,7 +1,7 @@
 # Core
 
 ![ESM Only](https://img.shields.io/badge/ESM-only-gray?labelColor=fe0)
-![TypeScript Only](https://img.shields.io/badge/TypeScript-only-gray?labelColor=06f)
+<!-- ![TypeScript Only](https://img.shields.io/badge/TypeScript-only-gray?labelColor=06f) -->
 ![CodeQL](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/codeql.yml?label=CodeQL)
 ![Test](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/mocha.yml?label=Test)
 ![Editorconfig](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/editorconfig.yml?label=Editorconfig)
@@ -11,13 +11,19 @@
 
 ## Table of Contents
 
--   [Getting Started](#getting-started)
+-   [Info](#info)
 -   [Authors](#authors)
 -   [Contributors](#contributors)
 -   [Contributing](#contributing)
 -   [Versioning](#versioning)
 -   [License](#license)
 -   [Acknowledgments](#acknowledgments)
+
+## Info
+
+If you want to learn more about the core capability for **conqueror**
+then you can read the
+[**Conqueror Wiki**](https://github.com/Conqueror-Site-Builder/conqueror/wiki).
 
 ## Authors
 
