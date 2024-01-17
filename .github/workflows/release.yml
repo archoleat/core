@@ -1,6 +1,11 @@
 name: Release
 
 on:
+  workflow_run:
+    workflows:
+      - Mocha
+    types:
+      - completed
   push:
     branches:
       - main
