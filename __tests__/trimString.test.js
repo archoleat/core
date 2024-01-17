@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import trimString from '../helpers/trimString.js';
+import trimString from '../src/helpers/trimString.js';
 
 describe('trimString', () => {
   it('should remove vowels from a string', () => {
