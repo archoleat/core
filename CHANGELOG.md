@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.1](https://github.com/Conqueror-Site-Builder/core/compare/v1.0.0...v1.0.1) (2024-01-17)
+
+
+### Bug Fixes
+
+* path in `trimString.js` ([#14](https://github.com/Conqueror-Site-Builder/core/issues/14)) ([f776a7e](https://github.com/Conqueror-Site-Builder/core/commit/f776a7e206dfa10117bad27f3add1678a6e46475))
+
 ## 1.0.0 (2024-01-17)
 
 
