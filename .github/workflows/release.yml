@@ -2,7 +2,8 @@ name: Release
 
 on:
   workflow_run:
-    workflows: Mocha
+    workflows:
+      - Mocha
     types:
       - completed
   push:
