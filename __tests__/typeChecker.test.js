@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import typeChecker from '../helpers/typeChecker.js';
+import typeChecker from '../src/helpers/typeChecker.js';
 
 describe('typeChecker', () => {
   it('should not throw an error for a valid array argument', () => {
