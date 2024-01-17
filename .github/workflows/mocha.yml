@@ -13,16 +13,19 @@ on:
     branches:
       - main
     paths:
-      - '**/*.js'
+      - '__tests__/**/*.spec.js'
+      - 'src/**/*.js'
   push:
     branches:
       - main
     paths:
-      - '**/*.js'
+      - '__tests__/**/*.spec.js'
+      - 'src/**/*.js'
 
 jobs:
   mocha:
     name: Test
+
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
