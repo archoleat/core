@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.0.2](https://github.com/Conqueror-Site-Builder/core/compare/v1.0.1...v1.0.2) (2024-01-17)
+
+
+### Bug Fixes
+
+* path in `typeChecker.js` ([#16](https://github.com/Conqueror-Site-Builder/core/issues/16)) ([47b209b](https://github.com/Conqueror-Site-Builder/core/commit/47b209b57b0cb3c1d99108b2e5a89fa86ca2d1c8))
+
 ## [1.0.1](https://github.com/Conqueror-Site-Builder/core/compare/v1.0.0...v1.0.1) (2024-01-17)
 
 
