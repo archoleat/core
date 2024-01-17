@@ -10,16 +10,17 @@ on:
     branches:
       - main
     paths:
-      - '**/*.js'
+      - 'src/**/*.js'
   push:
     branches:
       - main
     paths:
-      - '**/*.js'
+      - 'src/**/*.js'
 
 jobs:
   eslint:
     name: Lint
+
     runs-on: ubuntu-latest
     timeout-minutes: 10
 
