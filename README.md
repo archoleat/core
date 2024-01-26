@@ -20,9 +20,14 @@
 
 ## Info
 
-If you want to learn more about the core capability for **conqueror**
+If you want to learn more about the core capability for **Conqueror**
 then you can read the
 [**Conqueror Wiki**](https://github.com/Conqueror-Site-Builder/conqueror/wiki).
+
+## Husky
+
+This repository uses **.husky** as a submodule.
+**.husky** runs `pre commit` hook and `lint commit message`.
 
 ## Authors
 
