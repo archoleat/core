@@ -16,7 +16,7 @@
 //
 /// /////////////////////////////////////////////////////////////////////////
 
-import { basename, resolve } from 'path';
+import { basename, resolve } from 'node:path';
 
 import PROJECT_CONFIG from '../configs/project.config.js';
 

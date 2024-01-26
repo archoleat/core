@@ -17,19 +17,26 @@
 /// /////////////////////////////////////////////////////////////////////////
 
 import PATHS from '../settings/paths.js';
+import HELPERS from '../settings/helpers.js';
 import PLUGINS from '../settings/plugins.js';
 
-import REGEXPS from './regexps.js';
-
-const { PAGES_FOLDER, SRC_FOLDER } = PATHS;
 const {
-  join,
-  fs: { readdirSync },
+  build: { js: jsBuild },
+  src: { js: jsSource },
+} = PATHS;
+const { notifier } = HELPERS;
+const {
+  webpack,
+  gulp: { dest, src },
 } = PLUGINS;
-const { PUG_EXTENSION } = REGEXPS;
 
-const pugPages = readdirSync(join(SRC_FOLDER, PAGES_FOLDER)).filter((extension) =>
-  extension.endsWith(PUG_EXTENSION),
-);
+const formatterJS = (taskName, config) => src(jsSource)
+  .pipe(notifier.errorHandler(taskName))
+  .pipe(
+    webpack({
+      config,
+    }),
+  )
+  .pipe(dest(jsBuild));
 
-export default pugPages;
+export default formatterJS;

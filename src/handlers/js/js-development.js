@@ -18,12 +18,12 @@
 
 import PLUGINS from '../../settings/plugins.js';
 
-import webpackConfig from '../../webpack/webpack.prod.js';
+import webpackConfig from '../../webpack/webpack.production.js';
 
 import outputConfig from '../../configs/output.config.js';
 import PROJECT_CONFIG from '../../configs/project.config.js';
 
-import formatterJS from '../../formatters/formatterJS.js';
+import formatterJS from '../../formatters/js.js';
 
 const { entry } = PROJECT_CONFIG;
 const { TerserPlugin } = PLUGINS;
@@ -51,6 +51,6 @@ webPackBeautifyConfig.optimization = {
 };
 webPackBeautifyConfig.output = outputConfig(`${entry ?? 'main'}.js`);
 
-const JSDevHandler = () => formatterJS('JSDevHandler', webPackBeautifyConfig);
+const JSDevelopmentHandler = () => formatterJS('JSDevelopmentHandler', webPackBeautifyConfig);
 
-export default JSDevHandler;
+export default JSDevelopmentHandler;

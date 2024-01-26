@@ -16,28 +16,8 @@
 //
 /// /////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
-import HELPERS from '../settings/helpers.js';
-import PLUGINS from '../settings/plugins.js';
+import convertFont from './font.js';
 
-const {
-  build: { js: jsBuild },
-  src: { js: jsSrc },
-} = PATHS;
-const { notifier } = HELPERS;
-const {
-  webpack,
-  gulp: { dest, src },
-} = PLUGINS;
+const convertOTFToTTF = () => convertFont('convertOTFToTTF', 'otf');
 
-const formatterJS = (taskName, config) =>
-  src(jsSrc)
-    .pipe(notifier.errorHandler(taskName))
-    .pipe(
-      webpack({
-        config,
-      }),
-    )
-    .pipe(dest(jsBuild));
-
-export default formatterJS;
+export default convertOTFToTTF;

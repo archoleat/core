@@ -16,7 +16,7 @@
 //
 /// /////////////////////////////////////////////////////////////////////////
 
-import { resolve } from 'path';
+import { resolve } from 'node:path';
 
 const PROJECT_CONFIG = {
   entry: 'main',

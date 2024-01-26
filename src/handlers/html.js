@@ -20,10 +20,10 @@ import PATHS from '../settings/paths.js';
 import HELPERS from '../settings/helpers.js';
 import PLUGINS from '../settings/plugins.js';
 
-import HTMLMinConfig from '../configs/HTMLMin.config.js';
+import HTMLMinConfig from '../configs/html-min.config.js';
 import PROJECT_CONFIG from '../configs/project.config.js';
 import typografConfig from '../configs/typograf.config.js';
-import versionNumberConfig from '../configs/versionNumber.config.js';
+import versionNumberConfig from '../configs/version-number.config.js';
 
 const {
   formatters: { isTypography },
@@ -43,13 +43,12 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-const HTMLHandler = (isWebp) =>
-  src(join(buildFolder, HTML))
-    .pipe(notifier.errorHandler('HTMLHandler'))
-    .pipe(when(isWebp, webpHtmlNoSvg()))
-    .pipe(versionNumber(versionNumberConfig))
-    .pipe(when(isTypography, typograf(typografConfig)))
-    .pipe(htmlMin(HTMLMinConfig))
-    .pipe(dest(buildFolder));
+const HTMLHandler = (isWebp) => src(join(buildFolder, HTML))
+  .pipe(notifier.errorHandler('HTMLHandler'))
+  .pipe(when(isWebp, webpHtmlNoSvg()))
+  .pipe(versionNumber(versionNumberConfig))
+  .pipe(when(isTypography, typograf(typografConfig)))
+  .pipe(htmlMin(HTMLMinConfig))
+  .pipe(dest(buildFolder));
 
 export default HTMLHandler;

@@ -12,13 +12,13 @@ on:
     branches:
       - main
     paths:
-      - '__tests__/**/*.spec.js'
+      - 'specs/**/*.spec.js'
       - 'src/**/*.js'
   push:
     branches:
       - main
     paths:
-      - '__tests__/**/*.spec.js'
+      - 'specs/**/*.spec.js'
       - 'src/**/*.js'
 
 jobs:
