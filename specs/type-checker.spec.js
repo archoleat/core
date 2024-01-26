@@ -1,7 +1,7 @@
 import { assert } from 'chai';
 import { describe, it } from 'mocha';
 
-import typeChecker from '../src/helpers/typeChecker.js';
+import typeChecker from '../src/helpers/type-checker.js';
 
 describe('typeChecker', () => {
   it('should not throw an error for a valid array argument', () => {
@@ -102,7 +102,11 @@ describe('typeChecker', () => {
 
   it('should not throw an error for a valid bigint argument', () => {
     assert.doesNotThrow(() => {
-      typeChecker(1234567890123456789012345678901234567890n, 'hash', 'bigint');
+      typeChecker(
+        1_234_567_890_123_456_789_012_345_678_901_234_567_890n,
+        'hash',
+        'bigint',
+      );
     });
   });
 

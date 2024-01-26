@@ -16,8 +16,6 @@
 //
 /// /////////////////////////////////////////////////////////////////////////
 
-import convertFont from './convertFont.js';
+const trimString = (string, regex) => string?.toString().replace(regex, '').toLowerCase();
 
-const convertTTFToWOFF2 = () => convertFont('convertTTFToWOFF2', 'ttf');
-
-export default convertTTFToWOFF2;
+export default trimString;
