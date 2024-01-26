@@ -57,7 +57,8 @@ const fontFileHandler = (fontsFiles) => {
 
     if (newFileOnly !== fontFileName) {
       const [fontFamily, fontWeightValue] = fontFileName.split('-');
-      const fontWeight = FONT_WEIGHTS[trimString(fontWeightValue, ITALIC_REGEX) ?? 'regular'];
+      const fontWeight =
+        FONT_WEIGHTS[trimString(fontWeightValue, ITALIC_REGEX) ?? 'regular'];
       const fontStyle = ITALIC_REGEX.test(fontFileName) ? 'italic' : 'normal';
 
       generateFontFace(fontFacesFile, {
