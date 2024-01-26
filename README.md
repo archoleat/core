@@ -20,7 +20,7 @@
 
 ## Info
 
-If you want to learn more about the core capability for **conqueror**
+If you want to learn more about the core capability for **Conqueror**
 then you can read the
 [**Conqueror Wiki**](https://github.com/Conqueror-Site-Builder/conqueror/wiki).
 
