@@ -51,6 +51,7 @@ webPackBeautifyConfig.optimization = {
 };
 webPackBeautifyConfig.output = outputConfig(`${entry ?? 'main'}.js`);
 
-const JSDevelopmentHandler = () => formatterJS('JSDevelopmentHandler', webPackBeautifyConfig);
+const JSDevelopmentHandler = () =>
+  formatterJS('JSDevelopmentHandler', webPackBeautifyConfig);
 
 export default JSDevelopmentHandler;

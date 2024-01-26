@@ -31,9 +31,7 @@ const {
 
 const generateFontFace = async (
   fontFacesFile,
-  {
-    fontFileName, fontFamily, fontWeight, fontStyle,
-  },
+  { fontFileName, fontFamily, fontWeight, fontStyle },
 ) => {
   const fontFileURL = `src: url("../fonts/${fontFileName}.woff2") format("woff2")`;
   const fontFamilyName = `font-family: "${fontFamily}";`;

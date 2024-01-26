@@ -44,7 +44,8 @@ const convertFont = (taskName, extension) => {
     return src(woff2).pipe(errorMessage).pipe(dest(fontsBuild));
   }
 
-  const selectPlugin = extension === 'otf' ? fonter({ formats: ['ttf'] }) : ttf2woff2();
+  const selectPlugin =
+    extension === 'otf' ? fonter({ formats: ['ttf'] }) : ttf2woff2();
 
   return src(join(fontsSource, `*.${extension}`))
     .pipe(errorMessage)
