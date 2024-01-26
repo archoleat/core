@@ -18,10 +18,12 @@
 
 import PLUGINS from '../settings/plugins.js';
 
-import typeChecker from '../helpers/typeChecker.js';
+import typeChecker from '../helpers/type-checker.js';
 
 const {
-  chalk: { blueBright, gray, magenta, yellow, green, red },
+  chalk: {
+    blueBright, gray, magenta, yellow, green, red,
+  },
 } = PLUGINS;
 
 class FormatterMessage {
@@ -38,10 +40,9 @@ class FormatterMessage {
       messageTemplate = `File already exists, run 'npm run ${scriptName} --update'`;
     }
 
-    const messageResult =
-      message.length > MAX_MESSAGE_LENGTH
-        ? `The message must be no longer than ${MAX_MESSAGE_LENGTH} characters`
-        : messageTemplate ?? message;
+    const messageResult = message.length > MAX_MESSAGE_LENGTH
+      ? `The message must be no longer than ${MAX_MESSAGE_LENGTH} characters`
+      : messageTemplate ?? message;
 
     return `\n${magenta.bold('Source:')} ${gray.underline(path)}\n${blueBright.bold(
       'Message:',
@@ -70,15 +71,18 @@ class FormatterMessage {
     const info = this.#formatter(scriptName, path, message);
 
     switch (severityLevel) {
-      case 0:
+      case 0: {
         console.info(`${green.bold('SUCCESS:')} '${taskName}' ${info}`);
         break;
-      case 1:
+      }
+      case 1: {
         console.warn(`${yellow.bold('WARNING:')} '${taskName}' ${info}`);
         break;
-      default:
+      }
+      default: {
         console.error(`${red.bold('ERROR:')} '${taskName}' ${info}`);
         break;
+      }
     }
   };
 }
