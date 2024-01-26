@@ -16,36 +16,38 @@
 //
 /// /////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../../settings/paths.js';
-import HELPERS from '../../settings/helpers.js';
-import PLUGINS from '../../settings/plugins.js';
+import PATHS from '../settings/paths.js';
+import HELPERS from '../settings/helpers.js';
+import PLUGINS from '../settings/plugins.js';
 
-import imageMinConfig from '../../configs/imageMin.config.js';
+import webpCSSConfig from '../configs/webp-css.config.js';
 
 const {
-  build: { images: imagesBuild },
-  src: { images: imagesSrc, svg: svgSrc },
+  CSS_COMB_CONFIG_FILE,
+  build: { css: cssBuild },
 } = PATHS;
 const { notifier } = HELPERS;
 const {
-  imageMin,
-  newer,
-  webp,
+  autoPrefixer,
+  cleanCss,
+  cssComb,
+  groupCssMediaQueries,
+  join,
+  rename,
+  webpCss,
   when,
   gulp: { dest, src },
 } = PLUGINS;
 
-const imageHandler = (isWebp) =>
-  src(imagesSrc)
-    .pipe(notifier.errorHandler('imageHandler'))
-    .pipe(newer(imagesBuild))
-    .pipe(when(isWebp, webp()))
-    .pipe(when(isWebp, dest(imagesBuild)))
-    .pipe(when(isWebp, src(imagesSrc)))
-    .pipe(when(isWebp, newer(imagesBuild)))
-    .pipe(imageMin(imageMinConfig))
-    .pipe(dest(imagesBuild))
-    .pipe(src(svgSrc))
-    .pipe(dest(imagesBuild));
+const CSSHandler = (isWebp) => src(join(cssBuild, 'style.css'))
+  .pipe(notifier.errorHandler('CSSHandler'))
+  .pipe(groupCssMediaQueries())
+  .pipe(when(isWebp, webpCss(webpCSSConfig)))
+  .pipe(cssComb({ configPath: CSS_COMB_CONFIG_FILE }))
+  .pipe(autoPrefixer())
+  .pipe(dest(cssBuild))
+  .pipe(cleanCss({ level: 2 }))
+  .pipe(rename({ suffix: '.min' }))
+  .pipe(dest(cssBuild));
 
-export default imageHandler;
+export default CSSHandler;

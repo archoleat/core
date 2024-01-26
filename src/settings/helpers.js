@@ -19,11 +19,11 @@
 import FLAGS from '../helpers/flags.js';
 import REGEXPS from '../helpers/regexps.js';
 
-import notifier from '../helpers/Notifier.js';
-import pugPages from '../helpers/pugPages.js';
+import notifier from '../helpers/notifier.class.js';
+import pugPages from '../helpers/pug-pages.js';
 import status from '../helpers/status.js';
-import trimString from '../helpers/trimString.js';
-import typeChecker from '../helpers/typeChecker.js';
+import trimString from '../helpers/trim-string.js';
+import typeChecker from '../helpers/type-checker.js';
 
 const HELPERS = {
   FLAGS,
