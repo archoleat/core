@@ -16,8 +16,17 @@
 //
 /// /////////////////////////////////////////////////////////////////////////
 
-import convertFont from './convertFont.js';
+const typeChecker = (argument, argumentName, argumentType) => {
+  const message = `The '${argumentName}' argument must be an '${argumentType}'`;
+  const isArray = argumentType === 'array';
 
-const convertOTFToTTF = () => convertFont('convertOTFToTTF', 'otf');
+  if (isArray && !Array.isArray(argument)) {
+    throw new Error(message);
+  }
 
-export default convertOTFToTTF;
+  if (!isArray && typeof argument !== argumentType) {
+    throw new Error(message);
+  }
+};
+
+export default typeChecker;

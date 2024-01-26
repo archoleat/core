@@ -16,17 +16,18 @@
 //
 /// /////////////////////////////////////////////////////////////////////////
 
-const typeChecker = (arg, argName, argType) => {
-  const message = `The '${argName}' argument must be an '${argType}'`;
-  const isArray = argType === 'array';
+import PATHS from '../settings/paths.js';
+import PLUGINS from '../settings/plugins.js';
 
-  if (isArray && !Array.isArray(arg)) {
-    throw new Error(message);
-  }
+import REGEXPS from './regexps.js';
 
-  if (!isArray && typeof arg !== argType) {
-    throw new Error(message);
-  }
-};
+const { PAGES_FOLDER, SRC_FOLDER } = PATHS;
+const {
+  join,
+  fs: { readdirSync },
+} = PLUGINS;
+const { PUG_EXTENSION } = REGEXPS;
 
-export default typeChecker;
+const pugPages = readdirSync(join(SRC_FOLDER, PAGES_FOLDER)).filter((extension) => extension.endsWith(PUG_EXTENSION));
+
+export default pugPages;

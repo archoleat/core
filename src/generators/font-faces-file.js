@@ -20,58 +20,51 @@ import PATHS from '../settings/paths.js';
 import HELPERS from '../settings/helpers.js';
 import PLUGINS from '../settings/plugins.js';
 
-import SVGSpriteConfig from '../configs/SVGSprite.config.js';
+import fontFileHandler from '../handlers/fonts/font-file.js';
 
 const {
-  SRC_FOLDER,
-  spriteFile,
-  src: { sprite: spriteSrc },
+  fontFacesFile,
+  build: { fonts: fontsBuild },
 } = PATHS;
 const { notifier, status } = HELPERS;
 const {
-  join,
-  svgSprite,
-  gulp: { dest, src },
   fs: {
     existsSync,
-    promises: { readdir },
+    promises: { readdir, writeFile },
   },
 } = PLUGINS;
 
-const generateSprite = async (isUpdate) => {
-  const TASK_NAME = 'generateSprite';
-  const SCRIPT_NAME = 'sprite';
-  const spriteSvg = join(SRC_FOLDER, spriteFile);
-  const spriteFileExists = existsSync(spriteSvg) && !isUpdate;
+const generateFontFacesFile = async (isUpdate) => {
+  const TASK_NAME = 'generateFontFacesFile';
+  const SCRIPT_NAME = 'fonts';
+  const fontFacesFileExists = existsSync(fontFacesFile) && !isUpdate;
 
-  if (spriteFileExists) {
+  if (fontFacesFileExists) {
     return notifier.warning(TASK_NAME, {
       scriptName: SCRIPT_NAME,
-      path: spriteSvg,
-      message: spriteFileExists,
+      path: fontFacesFile,
+      message: fontFacesFileExists,
     });
   }
 
   try {
-    await readdir(spriteSrc);
+    const fontsFiles = await readdir(fontsBuild);
+    const state = status.state(fontFacesFile, isUpdate);
 
-    const state = status.state(spriteSvg, isUpdate);
+    await writeFile(fontFacesFile, '');
 
-    src(spriteSrc)
-      .pipe(notifier.errorHandler(TASK_NAME))
-      .pipe(svgSprite(SVGSpriteConfig))
-      .pipe(dest(SRC_FOLDER));
+    fontFileHandler(fontsFiles);
 
     return notifier.success(TASK_NAME, {
-      path: spriteSrc,
+      path: fontFacesFile,
       message: state,
     });
   } catch (error) {
     return notifier.error(TASK_NAME, {
-      path: spriteSrc,
+      path: fontFacesFile,
       message: error,
     });
   }
 };
 
-export default generateSprite;
+export default generateFontFacesFile;
