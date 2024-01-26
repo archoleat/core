@@ -1,33 +1,29 @@
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
+
 import PATHS from '../settings/paths.js';
 import HELPERS from '../settings/helpers.js';
 import PLUGINS from '../settings/plugins.js';
 
-import CSSLoaderConfig from '../configs/CSSLoader.config.js';
+import CSSLoaderConfig from '../configs/css-loader.config.js';
 import outputConfig from '../configs/output.config.js';
 import PROJECT_CONFIG from '../configs/project.config.js';
-import replaceLoaderConfig from '../configs/replaceLoader.config.js';
+import replaceLoaderConfig from '../configs/replace-loader.config.js';
 import resolveConfig from '../configs/resolve.config.js';
-
-import serverConfig from './webpack.server.js';
 
 const {
   entry,
-  server: { port, publicFolder, sourceMapType, stats, watchFiles },
+  isBabel,
+  cache: { settings },
+  formatters: {
+    languages: { isPugPretty, sassOutputStyle },
+  },
 } = PROJECT_CONFIG;
 const {
   ASSETS_FOLDER,
-  IMAGES_FOLDER,
   PAGES_FOLDER,
-  SCRIPTS_FOLDER,
   SRC_FOLDER,
-  src: {
-    favicon: faviconSrc,
-    images: imagesSrc,
-    js: jsSrc,
-    json: jsonSrc,
-    pug: pugSrc,
-    markdown: markdownSrc,
-  },
+  babelConfigFile,
+  src: { favicon: faviconSource, htaccess: htaccessSource, robots: robotsSource },
 } = PATHS;
 const {
   pugPages,
@@ -39,45 +35,54 @@ const {
     SCSS_EXTENSION_REGEX,
   },
 } = HELPERS;
-const { CopyPlugin, HtmlWebpackPlugin, join } = PLUGINS;
+const {
+  CopyPlugin, HtmlWebpackPlugin, join, TerserPlugin,
+} = PLUGINS;
 
 export default {
-  mode: 'development',
-  devtool: sourceMapType ?? 'inline-source-map',
-  stats: stats ?? 'errors-warnings',
-  optimization: {
-    minimize: false,
+  mode: 'production',
+  cache: settings ?? {
+    type: 'filesystem',
   },
-  entry: jsSrc,
-  output: outputConfig(
-    join(ASSETS_FOLDER, SCRIPTS_FOLDER, `${entry ?? 'main'}.min.js`),
-  ),
-  devServer: serverConfig({
-    port,
-    publicFolder,
-    watchFiles: [imagesSrc, jsonSrc, markdownSrc, pugSrc, ...(watchFiles ?? [])],
-  }),
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        extractComments: false,
+      }),
+    ],
+  },
+  output: outputConfig(`${entry ?? 'main'}.min.js`),
   plugins: [
     ...pugPages.map(
-      (pugPage) =>
-        new HtmlWebpackPlugin({
-          filename: pugPage.replace(PUG_EXTENSION_REGEX, HTML_EXTENSION),
-          inject: false,
-          minify: false,
-          production: false,
-          template: join(SRC_FOLDER, PAGES_FOLDER, pugPage),
-        }),
+      (pugPage) => new HtmlWebpackPlugin({
+        filename: join(
+          '../..',
+          pugPage.replace(PUG_EXTENSION_REGEX, HTML_EXTENSION),
+        ),
+        inject: false,
+        minify: false,
+        production: true,
+        template: join(SRC_FOLDER, PAGES_FOLDER, pugPage),
+      }),
     ),
+    new MiniCssExtractPlugin({
+      filename: '../css/style.css',
+    }),
     new CopyPlugin({
       patterns: [
         {
-          from: join(SRC_FOLDER, IMAGES_FOLDER),
-          to: join(ASSETS_FOLDER, IMAGES_FOLDER),
+          from: faviconSource,
+          to: '../../',
           noErrorOnMissing: true,
         },
         {
-          from: faviconSrc,
-          to: './',
+          from: robotsSource,
+          to: '../../',
+          noErrorOnMissing: true,
+        },
+        {
+          from: htaccessSource,
+          to: '../../',
           noErrorOnMissing: true,
         },
       ],
@@ -88,6 +93,16 @@ export default {
       {
         test: JS_EXTENSION_REGEX,
         exclude: NODE_MODULES_REGEX,
+        use: isBabel
+          ? [
+            {
+              loader: 'babel-loader',
+              options: {
+                configFile: babelConfigFile,
+              },
+            },
+          ]
+          : undefined,
         resolve: {
           fullySpecified: false,
         },
@@ -95,7 +110,7 @@ export default {
       {
         test: SCSS_EXTENSION_REGEX,
         use: [
-          'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'string-replace-loader',
             options: replaceLoaderConfig({
@@ -104,16 +119,14 @@ export default {
           },
           {
             loader: 'css-loader',
-            options: CSSLoaderConfig({
-              endPath: '/',
-              importLoaders: 1,
-              isSourceMap: true,
-            }),
+            options: CSSLoaderConfig(),
           },
           {
             loader: 'sass-loader',
             options: {
-              sourceMap: true,
+              sassOptions: {
+                outputStyle: sassOutputStyle ?? 'expanded',
+              },
             },
           },
         ],
@@ -130,6 +143,7 @@ export default {
           {
             loader: 'pug-loader',
             options: {
+              pretty: isPugPretty ?? true,
               self: true,
             },
           },

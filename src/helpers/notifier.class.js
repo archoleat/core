@@ -20,7 +20,7 @@ import PLUGINS from '../settings/plugins.js';
 
 import PROJECT_CONFIG from '../configs/project.config.js';
 
-import FormatterMessage from '../formatters/FormatterMessage.js';
+import FormatterMessage from '../formatters/message.js';
 
 const {
   notifier: { isNotify, sound },
@@ -37,22 +37,19 @@ class Notifier extends FormatterMessage {
     super(isEnabled);
   }
 
-  errorHandler = (taskName) =>
-    plumber({
-      errorHandler: onError({
-        title: `Error: ${taskName}`,
-        message: 'Error: <%= error.message %>',
-        sound: sound ?? 'Pop',
-      }),
-    });
+  errorHandler = (taskName) => plumber({
+    errorHandler: onError({
+      title: `Error: ${taskName}`,
+      message: 'Error: <%= error.message %>',
+      sound: sound ?? 'Pop',
+    }),
+  });
 
   success = (taskName, options) => this.message(taskName, options);
 
-  warning = (taskName, options) =>
-    this.message(taskName, options, this.#SEVERITY_LEVELS.WARNING);
+  warning = (taskName, options) => this.message(taskName, options, this.#SEVERITY_LEVELS.WARNING);
 
-  error = (taskName, options) =>
-    this.message(taskName, options, this.#SEVERITY_LEVELS.ERROR);
+  error = (taskName, options) => this.message(taskName, options, this.#SEVERITY_LEVELS.ERROR);
 }
 
 const notifier = new Notifier(isNotify ?? true);

@@ -17,7 +17,9 @@
 /// /////////////////////////////////////////////////////////////////////////
 
 import { argv } from 'node:process';
-import { join } from 'path';
+import { join } from 'node:path';
+
+import fs from 'node:fs';
 
 import { deleteAsync } from 'del';
 import { onError } from 'gulp-notify';
@@ -28,7 +30,6 @@ import cleanCss from 'gulp-clean-css';
 import CopyPlugin from 'copy-webpack-plugin';
 import cssComb from 'gulp-csscomb';
 import fonter from 'gulp-fonter-fix';
-import fs from 'fs';
 import groupCssMediaQueries from 'gulp-group-css-media-queries';
 import gulp from 'gulp';
 import htmlMin from 'gulp-htmlmin';

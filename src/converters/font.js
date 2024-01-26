@@ -23,7 +23,7 @@ import PLUGINS from '../settings/plugins.js';
 const {
   fontFacesFile,
   build: { fonts: fontsBuild },
-  src: { fonts: fontsSrc },
+  src: { fonts: fontsSource },
 } = PATHS;
 const { notifier, typeChecker } = HELPERS;
 const {
@@ -37,20 +37,19 @@ const {
 const convertFont = (taskName, extension) => {
   typeChecker(extension, 'extension', 'string');
 
-  const woff2 = join(fontsSrc, '*.woff2');
+  const woff2 = join(fontsSource, '*.woff2');
   const errorMessage = notifier.errorHandler(taskName);
 
   if (existsSync(fontFacesFile) && existsSync(woff2)) {
     return src(woff2).pipe(errorMessage).pipe(dest(fontsBuild));
   }
 
-  const selectPlugin =
-    extension === 'otf' ? fonter({ formats: ['ttf'] }) : ttf2woff2();
+  const selectPlugin = extension === 'otf' ? fonter({ formats: ['ttf'] }) : ttf2woff2();
 
-  return src(join(fontsSrc, `*.${extension}`))
+  return src(join(fontsSource, `*.${extension}`))
     .pipe(errorMessage)
     .pipe(selectPlugin)
-    .pipe(dest(fontsSrc))
+    .pipe(dest(fontsSource))
     .pipe(src(woff2))
     .pipe(dest(fontsBuild));
 };
