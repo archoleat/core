@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.0.4](https://github.com/Conqueror-Site-Builder/core/compare/v1.0.3...v1.0.4) (2024-01-26)
+
+
+### Code Refactoring
+
+* **ecrc:** add exclude for `font-face.js` ([#42](https://github.com/Conqueror-Site-Builder/core/issues/42)) ([c815f1f](https://github.com/Conqueror-Site-Builder/core/commit/c815f1f02db048fd01b3bf283939d3fd3d995cb1))
+* **js:** add max line length ([#43](https://github.com/Conqueror-Site-Builder/core/issues/43)) ([bde2167](https://github.com/Conqueror-Site-Builder/core/commit/bde21671fd7418b06e8e5a76ba913973a6d56957))
+
 ## [1.0.3](https://github.com/Conqueror-Site-Builder/core/compare/v1.0.2...v1.0.3) (2024-01-26)
 
 
