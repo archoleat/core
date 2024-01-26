@@ -4,8 +4,8 @@
     "init": "npm i && husky install",
     "fix:prettier": "prettier . --write",
     "lint:editorconfig": "editorconfig-checker",
-    "lint:remark": "remark . --quiet",
-    "lint:eslint": "eslint **/*.js --fix",
+    "lint:markdown": "remark . --quiet",
+    "lint:js": "eslint src/**/*.js --fix",
     "test": "mocha",
     "cm": "cz"
   },
