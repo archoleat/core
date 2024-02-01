@@ -1,4 +1,4 @@
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 //
 // Copyright 2023 nikkeyl.
 //
@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
 import PATHS from '../settings/paths.js';
 import HELPERS from '../settings/helpers.js';
@@ -28,9 +28,10 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-const archiver = () => src(join(buildFolder, '**/*'))
-  .pipe(notifier.errorHandler('zip'))
-  .pipe(zipPlugin(`${rootFolder}.zip`))
-  .pipe(dest(cacheFolder));
+const archiver = () =>
+  src(join(buildFolder, '**/*'))
+    .pipe(notifier.errorHandler('zip'))
+    .pipe(zipPlugin(`${rootFolder}.zip`))
+    .pipe(dest(cacheFolder));
 
 export default archiver;

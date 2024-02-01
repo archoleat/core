@@ -1,4 +1,4 @@
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 //
 // Copyright 2023 nikkeyl.
 //
@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
 import PATHS from '../../settings/paths.js';
 import HELPERS from '../../settings/helpers.js';
@@ -35,16 +35,17 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-const imageHandler = (isWebp) => src(imagesSource)
-  .pipe(notifier.errorHandler('imageHandler'))
-  .pipe(newer(imagesBuild))
-  .pipe(when(isWebp, webp()))
-  .pipe(when(isWebp, dest(imagesBuild)))
-  .pipe(when(isWebp, src(imagesSource)))
-  .pipe(when(isWebp, newer(imagesBuild)))
-  .pipe(imageMin(imageMinConfig))
-  .pipe(dest(imagesBuild))
-  .pipe(src(svgSource))
-  .pipe(dest(imagesBuild));
+const imageHandler = (isWebp) =>
+  src(imagesSource)
+    .pipe(notifier.errorHandler('imageHandler'))
+    .pipe(newer(imagesBuild))
+    .pipe(when(isWebp, webp()))
+    .pipe(when(isWebp, dest(imagesBuild)))
+    .pipe(when(isWebp, src(imagesSource)))
+    .pipe(when(isWebp, newer(imagesBuild)))
+    .pipe(imageMin(imageMinConfig))
+    .pipe(dest(imagesBuild))
+    .pipe(src(svgSource))
+    .pipe(dest(imagesBuild));
 
 export default imageHandler;

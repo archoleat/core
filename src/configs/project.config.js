@@ -1,4 +1,4 @@
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 //
 // Copyright 2023 nikkeyl.
 //
@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
 import { resolve } from 'node:path';
 
@@ -27,11 +27,6 @@ const PROJECT_CONFIG = {
     settings: {
       type: 'filesystem',
       cacheDirectory: resolve('.cache'),
-      // compression
-      // idletimeout
-      // maxAge: 86400000
-      // memoryCacheUnaffected
-      // store: 'pack',
     },
   },
   formatters: {

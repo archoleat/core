@@ -1,4 +1,4 @@
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 //
 // Copyright 2023 nikkeyl.
 //
@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
 import PATHS from '../settings/paths.js';
 import HELPERS from '../settings/helpers.js';
@@ -43,12 +43,13 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-const HTMLHandler = (isWebp) => src(join(buildFolder, HTML))
-  .pipe(notifier.errorHandler('HTMLHandler'))
-  .pipe(when(isWebp, webpHtmlNoSvg()))
-  .pipe(versionNumber(versionNumberConfig))
-  .pipe(when(isTypography, typograf(typografConfig)))
-  .pipe(htmlMin(HTMLMinConfig))
-  .pipe(dest(buildFolder));
+const HTMLHandler = (isWebp) =>
+  src(join(buildFolder, HTML))
+    .pipe(notifier.errorHandler('HTMLHandler'))
+    .pipe(when(isWebp, webpHtmlNoSvg()))
+    .pipe(versionNumber(versionNumberConfig))
+    .pipe(when(isTypography, typograf(typografConfig)))
+    .pipe(htmlMin(HTMLMinConfig))
+    .pipe(dest(buildFolder));
 
 export default HTMLHandler;

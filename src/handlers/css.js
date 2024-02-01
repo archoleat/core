@@ -1,4 +1,4 @@
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 //
 // Copyright 2023 nikkeyl.
 //
@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
 import PATHS from '../settings/paths.js';
 import HELPERS from '../settings/helpers.js';
@@ -39,15 +39,16 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-const CSSHandler = (isWebp) => src(join(cssBuild, 'style.css'))
-  .pipe(notifier.errorHandler('CSSHandler'))
-  .pipe(groupCssMediaQueries())
-  .pipe(when(isWebp, webpCss(webpCSSConfig)))
-  .pipe(cssComb({ configPath: CSS_COMB_CONFIG_FILE }))
-  .pipe(autoPrefixer())
-  .pipe(dest(cssBuild))
-  .pipe(cleanCss({ level: 2 }))
-  .pipe(rename({ suffix: '.min' }))
-  .pipe(dest(cssBuild));
+const CSSHandler = (isWebp) =>
+  src(join(cssBuild, 'style.css'))
+    .pipe(notifier.errorHandler('CSSHandler'))
+    .pipe(groupCssMediaQueries())
+    .pipe(when(isWebp, webpCss(webpCSSConfig)))
+    .pipe(cssComb({ configPath: CSS_COMB_CONFIG_FILE }))
+    .pipe(autoPrefixer())
+    .pipe(dest(cssBuild))
+    .pipe(cleanCss({ level: 2 }))
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(dest(cssBuild));
 
 export default CSSHandler;

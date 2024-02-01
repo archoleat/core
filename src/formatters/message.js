@@ -1,4 +1,4 @@
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 //
 // Copyright 2023 nikkeyl.
 //
@@ -14,16 +14,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
 import PLUGINS from '../settings/plugins.js';
 
 import typeChecker from '../helpers/type-checker.js';
 
 const {
-  chalk: {
-    blueBright, gray, magenta, yellow, green, red,
-  },
+  chalk: { blueBright, gray, magenta, yellow, green, red },
 } = PLUGINS;
 
 class FormatterMessage {
@@ -40,9 +38,10 @@ class FormatterMessage {
       messageTemplate = `File already exists, run 'npm run ${scriptName} --update'`;
     }
 
-    const messageResult = message.length > MAX_MESSAGE_LENGTH
-      ? `The message must be no longer than ${MAX_MESSAGE_LENGTH} characters`
-      : messageTemplate ?? message;
+    const messageResult =
+      message.length > MAX_MESSAGE_LENGTH
+        ? `The message must be no longer than ${MAX_MESSAGE_LENGTH} characters`
+        : messageTemplate ?? message;
 
     return `\n${magenta.bold('Source:')} ${gray.underline(path)}\n${blueBright.bold(
       'Message:',

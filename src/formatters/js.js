@@ -1,4 +1,4 @@
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 //
 // Copyright 2023 nikkeyl.
 //
@@ -14,7 +14,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-/// /////////////////////////////////////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////
 
 import PATHS from '../settings/paths.js';
 import HELPERS from '../settings/helpers.js';
@@ -30,13 +30,14 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-const formatterJS = (taskName, config) => src(jsSource)
-  .pipe(notifier.errorHandler(taskName))
-  .pipe(
-    webpack({
-      config,
-    }),
-  )
-  .pipe(dest(jsBuild));
+const formatterJS = (taskName, config) =>
+  src(jsSource)
+    .pipe(notifier.errorHandler(taskName))
+    .pipe(
+      webpack({
+        config,
+      }),
+    )
+    .pipe(dest(jsBuild));
 
 export default formatterJS;
