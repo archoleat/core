@@ -7,7 +7,7 @@
     "lint:markdown": "remark . --quiet",
     "lint:js": "eslint src/**/*.js --fix",
     "test": "mocha",
-    "cm": "cz"
+    "commit": "cz"
   },
   "devDependencies": {
     "@commitlint/cli": "*",
