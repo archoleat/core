@@ -66,7 +66,7 @@ You can see the available versions
 
 ## License
 
-This project is licensed under the MIT license - see the
+This project is licensed under the Apache 2.0 license - see the
 [**LICENSE**](LICENSE) for details.
 
 ## Acknowledgments
