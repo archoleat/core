@@ -1,6 +1,7 @@
 # Core
 
 ![ESM Only](https://img.shields.io/badge/ESM-only-gray?labelColor=fe0)
+![Commitlint](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/commitlint.yml?label=Commitlint)
 ![CodeQL](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/codeql.yml?label=CodeQL)
 ![Test](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/mocha.yml?label=Test)
 ![Editorconfig](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/editorconfig.yml?label=Editorconfig)
@@ -11,11 +12,20 @@
 ## Table of Contents
 
 -   [Info](#info)
+
+-   [Additions](#additions)
+    -   [Husky](#husky)
+
 -   [Authors](#authors)
+
 -   [Contributors](#contributors)
+
 -   [Contributing](#contributing)
+
 -   [Versioning](#versioning)
+
 -   [License](#license)
+
 -   [Acknowledgments](#acknowledgments)
 
 ## Info
@@ -24,10 +34,12 @@ If you want to learn more about the core capability for **Conqueror**
 then you can read the
 [**Conqueror Wiki**](https://github.com/Conqueror-Site-Builder/conqueror/wiki).
 
-## Husky
+## Additions
+
+### Husky
 
 This repository uses **.husky** as a submodule.
-**.husky** runs `pre-commit` hook and `commit-msg`.
+**.husky** runs **`pre-commit`** hook and **`commit-msg`**.
 
 ## Authors
 
