@@ -1,13 +1,13 @@
 # Core
 
 ![ESM Only](https://img.shields.io/badge/ESM-only-gray?labelColor=fe0)
-![Commitlint](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/commitlint.yml?label=Commitlint)
-![CodeQL](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/codeql.yml?label=CodeQL)
-![Test](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/mocha.yml?label=Test)
-![Editorconfig](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/editorconfig.yml?label=Editorconfig)
-![Prettier](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/prettier.yml?label=Prettier)
-![Markdown](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/markdown.yml?label=Markdown)
-![ESLint](https://img.shields.io/github/actions/workflow/status/Conqueror-Site-Builder/core/eslint.yml?label=ESLint)
+![Commitlint](https://img.shields.io/github/actions/workflow/status/Archoleat/core/commitlint.yml?label=Commitlint)
+![CodeQL](https://img.shields.io/github/actions/workflow/status/Archoleat/core/codeql.yml?label=CodeQL)
+![Test](https://img.shields.io/github/actions/workflow/status/Archoleat/core/mocha.yml?label=Test)
+![Editorconfig](https://img.shields.io/github/actions/workflow/status/Archoleat/core/editorconfig.yml?label=Editorconfig)
+![Prettier](https://img.shields.io/github/actions/workflow/status/Archoleat/core/prettier.yml?label=Prettier)
+![Markdown](https://img.shields.io/github/actions/workflow/status/Archoleat/core/markdown.yml?label=Markdown)
+![ESLint](https://img.shields.io/github/actions/workflow/status/Archoleat/core/eslint.yml?label=ESLint)
 
 ## Table of Contents
 
@@ -30,9 +30,9 @@
 
 ## Info
 
-If you want to learn more about the core capability for **Conqueror**
+If you want to learn more about the core capability for **Archoleat**
 then you can read the
-[**Conqueror Wiki**](https://github.com/Conqueror-Site-Builder/conqueror/wiki).
+[**Archoleat Wiki**](https://github.com/Archoleat/archoleat/wiki).
 
 ## Additions
 
@@ -48,7 +48,7 @@ See also the list of [**Authors**](AUTHORS.md).
 ## Contributors
 
 If you want to improve something, you can write about it
-[**here**](https://github.com/Conqueror-Site-Builder/core/issues/new/choose).
+[**here**](https://github.com/Archoleat/core/issues/new/choose).
 
 You can also view a list of [**Contributors**](CONTRIBUTORS.md).
 
@@ -62,7 +62,7 @@ and the process for submitting **Pull Request** to us.
 
 We use [**SemVer**](https://semver.org) for versioning.
 You can see the available versions
-[**here**](https://github.com/Conqueror-Site-Builder/core/tags).
+[**here**](https://github.com/Archoleat/core/tags).
 
 ## License
 
