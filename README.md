@@ -26,13 +26,11 @@
 
 -   [License](#license)
 
--   [Acknowledgments](#acknowledgments)
-
 ## Info
 
-If you want to learn more about the core capability for **Archoleat**
+If you want to learn more about the core capability for **Archoleat Builder**
 then you can read the
-[**Archoleat Wiki**](https://github.com/Archoleat/archoleat/wiki).
+[**Archoleat Builder Wiki**](https://github.com/Archoleat/archoleat-builder/wiki).
 
 ## Additions
 
@@ -68,7 +66,3 @@ You can see the available versions
 
 This project is licensed under the Apache 2.0 license - see the
 [**LICENSE**](LICENSE) for details.
-
-## Acknowledgments
-
-Thanks to everyone who takes part in the development of the project.
