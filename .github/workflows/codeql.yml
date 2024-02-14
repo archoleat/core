@@ -5,14 +5,12 @@ on:
     branches:
       - main
     paths:
-      - 'specs/**/*.js'
-      - 'src/**/*.js'
+      - src/**/*.js
   push:
     branches:
       - main
     paths:
-      - 'specs/**/*.js'
-      - 'src/**/*.js'
+      - src/**/*.js
 
 permissions:
   actions: read
