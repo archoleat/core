@@ -4,6 +4,7 @@
     "config.yml",
     "CONTRIBUTING.md",
     "font-face.js",
+    "pnpm-lock.yaml",
     "README.md"
   ]
 }
