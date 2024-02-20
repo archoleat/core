@@ -1,13 +1,13 @@
 # Core
 
 ![ESM Only](https://img.shields.io/badge/ESM-only-gray?labelColor=fe0)
-![Test](https://img.shields.io/github/actions/workflow/status/Archoleat/core/mocha.yml?label=Test)
-![Commitlint](https://img.shields.io/github/actions/workflow/status/Archoleat/core/commitlint.yml?label=Commitlint)
-![CodeQL](https://img.shields.io/github/actions/workflow/status/Archoleat/core/codeql.yml?label=CodeQL)
-![Editorconfig](https://img.shields.io/github/actions/workflow/status/Archoleat/core/editorconfig.yml?label=Editorconfig)
-![Prettier](https://img.shields.io/github/actions/workflow/status/Archoleat/core/prettier.yml?label=Prettier)
-![Markdown](https://img.shields.io/github/actions/workflow/status/Archoleat/core/markdown.yml?label=Markdown)
-![ESLint](https://img.shields.io/github/actions/workflow/status/Archoleat/core/eslint.yml?label=ESLint)
+![Test](https://img.shields.io/github/actions/workflow/status/Archoleat/core/mocha.yaml?label=Test)
+![Commitlint](https://img.shields.io/github/actions/workflow/status/Archoleat/core/commitlint.yaml?label=Commitlint)
+![CodeQL](https://img.shields.io/github/actions/workflow/status/Archoleat/core/codeql.yaml?label=CodeQL)
+![Editorconfig](https://img.shields.io/github/actions/workflow/status/Archoleat/core/editorconfig.yaml?label=Editorconfig)
+![Prettier](https://img.shields.io/github/actions/workflow/status/Archoleat/core/prettier.yaml?label=Prettier)
+![Markdown](https://img.shields.io/github/actions/workflow/status/Archoleat/core/markdown.yaml?label=Markdown)
+![ESLint](https://img.shields.io/github/actions/workflow/status/Archoleat/core/eslint.yaml?label=ESLint)
 
 ## Table of Contents
 
