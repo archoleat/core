@@ -1,7 +1,7 @@
 {
   "type": "module",
   "scripts": {
-    "init": "pnpm i && husky && git submodule init && git submodule update",
+    "init": "pnpm i && husky && git submodule update",
     "test": "mocha",
     "release": "semantic-release",
     "lint:editorconfig": "editorconfig-checker",
