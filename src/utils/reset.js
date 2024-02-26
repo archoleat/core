@@ -25,7 +25,9 @@ const { removes } = PROJECT_CONFIG;
 const { GIT_KEEP_FILE, buildFolder, cacheFolder } = PATHS;
 const { deleteAsync } = PLUGINS;
 
-const reset = () =>
-  deleteAsync([GIT_KEEP_FILE, cacheFolder, buildFolder, ...(removes ?? [])]);
-
-export default reset;
+export default deleteAsync([
+  GIT_KEEP_FILE,
+  cacheFolder,
+  buildFolder,
+  ...(removes ?? []),
+]);

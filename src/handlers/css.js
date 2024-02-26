@@ -39,7 +39,7 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-const CSSHandler = (isWebp) =>
+export default (isWebp) =>
   src(join(cssBuild, 'style.css'))
     .pipe(notifier.errorHandler('CSSHandler'))
     .pipe(groupCssMediaQueries())
@@ -50,5 +50,3 @@ const CSSHandler = (isWebp) =>
     .pipe(cleanCss({ level: 2 }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(dest(cssBuild));
-
-export default CSSHandler;

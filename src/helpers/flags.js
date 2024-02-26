@@ -20,8 +20,6 @@ import PLUGINS from '../settings/plugins.js';
 
 const { argv } = PLUGINS;
 
-const FLAGS = {
+export default {
   isUpdate: argv.includes('--update'),
 };
-
-export default FLAGS;

@@ -16,12 +16,10 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-const babelConfig = (api) => {
+export default (api) => {
   api.cache(true);
 
   const presets = [['@babel/preset-env']];
 
   return { presets };
 };
-
-export default babelConfig;

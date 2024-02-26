@@ -22,7 +22,7 @@ import SVGOConfig from './SVGO.config.js';
 
 const { spriteFile } = PATHS;
 
-const SVGSpriteConfig = {
+export default {
   mode: {
     symbol: {
       sprite: spriteFile,
@@ -44,5 +44,3 @@ const SVGSpriteConfig = {
     },
   },
 };
-
-export default SVGSpriteConfig;

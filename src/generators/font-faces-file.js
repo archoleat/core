@@ -34,7 +34,7 @@ const {
   },
 } = PLUGINS;
 
-const generateFontFacesFile = async (isUpdate) => {
+export default async (isUpdate) => {
   const TASK_NAME = 'generateFontFacesFile';
   const SCRIPT_NAME = 'fonts';
   const fontFacesFileExists = existsSync(fontFacesFile) && !isUpdate;
@@ -66,5 +66,3 @@ const generateFontFacesFile = async (isUpdate) => {
     });
   }
 };
-
-export default generateFontFacesFile;
