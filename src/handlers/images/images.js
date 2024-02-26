@@ -35,7 +35,7 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-const imageHandler = (isWebp) =>
+export default (isWebp) =>
   src(imagesSource)
     .pipe(notifier.errorHandler('imageHandler'))
     .pipe(newer(imagesBuild))
@@ -47,5 +47,3 @@ const imageHandler = (isWebp) =>
     .pipe(dest(imagesBuild))
     .pipe(src(svgSource))
     .pipe(dest(imagesBuild));
-
-export default imageHandler;

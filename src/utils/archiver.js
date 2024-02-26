@@ -28,10 +28,8 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-const archiver = () =>
+export default () =>
   src(join(buildFolder, '**/*'))
     .pipe(notifier.errorHandler('zip'))
     .pipe(zipPlugin(`${rootFolder}.zip`))
     .pipe(dest(cacheFolder));
-
-export default archiver;

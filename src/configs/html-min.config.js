@@ -22,7 +22,7 @@ const {
   html: { isMinify },
 } = PROJECT_CONFIG;
 
-const HTMLMinConfig = {
+export default {
   collapseBooleanAttributes: true,
   collapseWhitespace: isMinify ?? false,
   minifyCSS: true,
@@ -31,5 +31,3 @@ const HTMLMinConfig = {
   removeEmptyAttributes: true,
   removeRedundantAttributes: true,
 };
-
-export default HTMLMinConfig;

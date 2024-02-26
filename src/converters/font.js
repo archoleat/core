@@ -34,7 +34,7 @@ const {
   fs: { existsSync },
 } = PLUGINS;
 
-const convertFont = (taskName, extension) => {
+export default (taskName, extension) => {
   typeChecker(extension, 'extension', 'string');
 
   const woff2 = join(fontsSource, '*.woff2');
@@ -54,5 +54,3 @@ const convertFont = (taskName, extension) => {
     .pipe(src(woff2))
     .pipe(dest(fontsBuild));
 };
-
-export default convertFont;
