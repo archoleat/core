@@ -28,7 +28,7 @@ const {
   REGEXPS: { FILE_EXTENSION, ITALIC_REGEX },
 } = HELPERS;
 
-const fontFileHandler = (fontsFiles) => {
+export default (fontsFiles) => {
   typeChecker(fontsFiles, 'fontsFiles', 'array');
 
   const FONT_WEIGHTS = {
@@ -72,5 +72,3 @@ const fontFileHandler = (fontsFiles) => {
     }
   }
 };
-
-export default fontFileHandler;

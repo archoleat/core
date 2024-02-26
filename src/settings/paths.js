@@ -42,7 +42,7 @@ const cacheFolder = location ?? '.cache';
 const rootFolder = basename(resolve());
 const svgSpriteFiles = join(SRC_FOLDER, IMAGES_FOLDER, SVG_SPRITE_FOLDER, '*.svg');
 
-const PATHS = {
+export default {
   ASSETS_FOLDER,
   IMAGES_FOLDER,
   PAGES_FOLDER,
@@ -82,5 +82,3 @@ const PATHS = {
     svg: [join(SRC_FOLDER, IMAGES_FOLDER, '**/*.svg'), `!${svgSpriteFiles}`],
   },
 };
-
-export default PATHS;

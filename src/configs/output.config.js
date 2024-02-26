@@ -25,10 +25,8 @@ const {
   server: { publicPath },
 } = PROJECT_CONFIG;
 
-const outputConfig = (fileName) => ({
+export default (fileName) => ({
   publicPath,
   filename: fileName,
   path: buildFolder,
 });
-
-export default outputConfig;

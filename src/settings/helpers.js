@@ -25,7 +25,7 @@ import status from '../helpers/status.js';
 import trimString from '../helpers/trim-string.js';
 import typeChecker from '../helpers/type-checker.js';
 
-const HELPERS = {
+export default {
   FLAGS,
   REGEXPS,
   notifier,
@@ -34,5 +34,3 @@ const HELPERS = {
   trimString,
   typeChecker,
 };
-
-export default HELPERS;
