@@ -18,6 +18,4 @@
 
 import convertFont from './font.js';
 
-const convertOTFToTTF = () => convertFont('convertOTFToTTF', 'otf');
-
-export default convertOTFToTTF;
+export default () => convertFont('convertOTFToTTF', 'otf');

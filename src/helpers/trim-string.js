@@ -16,7 +16,5 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-const trimString = (string, regex) =>
+export default (string, regex) =>
   string?.toString().replace(regex, '').toLowerCase();
-
-export default trimString;

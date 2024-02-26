@@ -50,7 +50,7 @@ import webpCss from 'gulp-webpcss';
 import webpHtmlNoSvg from 'gulp-webp-html-nosvg';
 import zipPlugin from 'gulp-zip';
 
-const PLUGINS = {
+export default {
   argv,
   autoPrefixer,
   chalk,
@@ -82,5 +82,3 @@ const PLUGINS = {
   zipPlugin,
   when: ifPlugin,
 };
-
-export default PLUGINS;

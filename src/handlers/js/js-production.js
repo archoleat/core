@@ -20,6 +20,4 @@ import webpackConfig from '../../webpack/webpack.production.js';
 
 import formatterJS from '../../formatters/js.js';
 
-const JSProductionHandler = () => formatterJS('JSProductionHandler', webpackConfig);
-
-export default JSProductionHandler;
+export default () => formatterJS('JSProductionHandler', webpackConfig);

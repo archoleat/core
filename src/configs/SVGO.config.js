@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-const SVGOConfig = {
+export default {
   plugins: [
     {
       name: 'preset-default',
@@ -36,5 +36,3 @@ const SVGOConfig = {
     'removeXMLNS',
   ],
 };
-
-export default SVGOConfig;

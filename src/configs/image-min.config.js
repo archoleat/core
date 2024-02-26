@@ -22,7 +22,7 @@ const {
   images: { optimizationLevel },
 } = PROJECT_CONFIG;
 
-const imageMinConfig = {
+export default {
   optimizationLevel: optimizationLevel ?? 3,
   interlaced: true,
   svgoPlugins: [
@@ -31,5 +31,3 @@ const imageMinConfig = {
     },
   ],
 };
-
-export default imageMinConfig;

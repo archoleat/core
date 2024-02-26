@@ -16,9 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-const webpCSSConfig = {
+export default {
   noWebpClass: '.no-webp',
   webpClass: '.webp',
 };
-
-export default webpCSSConfig;
