@@ -38,7 +38,7 @@ const {
   },
 } = PLUGINS;
 
-const generateSprite = async (isUpdate) => {
+export default async (isUpdate) => {
   const TASK_NAME = 'generateSprite';
   const SCRIPT_NAME = 'sprite';
   const spriteSvg = join(SRC_FOLDER, spriteFile);
@@ -73,5 +73,3 @@ const generateSprite = async (isUpdate) => {
     });
   }
 };
-
-export default generateSprite;

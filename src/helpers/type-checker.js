@@ -16,7 +16,7 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-const typeChecker = (argument, argumentName, argumentType) => {
+export default (argument, argumentName, argumentType) => {
   const message = `The '${argumentName}' argument must be an '${argumentType}'`;
   const isArray = argumentType === 'array';
 
@@ -28,5 +28,3 @@ const typeChecker = (argument, argumentName, argumentType) => {
     throw new Error(message);
   }
 };
-
-export default typeChecker;

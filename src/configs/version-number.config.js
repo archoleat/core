@@ -27,7 +27,7 @@ const {
 } = PROJECT_CONFIG;
 const { versionFile } = PATHS;
 
-const versionNumberConfig = {
+export default {
   value: format ?? '%DT%',
   append: {
     key: 'v',
@@ -38,5 +38,3 @@ const versionNumberConfig = {
     file: versionFile,
   },
 };
-
-export default versionNumberConfig;

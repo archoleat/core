@@ -29,7 +29,7 @@ const {
   },
 } = PLUGINS;
 
-const generateFontFace = async (
+export default async (
   fontFacesFile,
   { fontFileName, fontFamily, fontWeight, fontStyle },
 ) => {
@@ -42,5 +42,3 @@ const generateFontFace = async (
 
   await appendFile(fontFacesFile, fontFace);
 };
-
-export default generateFontFace;

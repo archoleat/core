@@ -22,10 +22,8 @@ const {
   fs: { existsSync },
 } = PLUGINS;
 
-const status = {
+export default {
   state(file, state) {
     return existsSync(file) && state ? 'Update' : 'Added';
   },
 };
-
-export default status;

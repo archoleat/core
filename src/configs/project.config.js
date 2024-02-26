@@ -18,7 +18,7 @@
 
 import { resolve } from 'node:path';
 
-const PROJECT_CONFIG = {
+export default {
   entry: 'main',
   isBabel: true,
   language: 'en-US',
@@ -68,7 +68,3 @@ const PROJECT_CONFIG = {
   },
   removes: ['*.md'],
 };
-
-// two files: .min.css и .css
-
-export default PROJECT_CONFIG;

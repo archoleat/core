@@ -18,6 +18,4 @@
 
 import convertFont from './font.js';
 
-const convertTTFToWOFF2 = () => convertFont('convertTTFToWOFF2', 'ttf');
-
-export default convertTTFToWOFF2;
+export default () => convertFont('convertTTFToWOFF2', 'ttf');

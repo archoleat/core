@@ -43,7 +43,7 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-const HTMLHandler = (isWebp) =>
+export default (isWebp) =>
   src(join(buildFolder, HTML))
     .pipe(notifier.errorHandler('HTMLHandler'))
     .pipe(when(isWebp, webpHtmlNoSvg()))
@@ -51,5 +51,3 @@ const HTMLHandler = (isWebp) =>
     .pipe(when(isTypography, typograf(typografConfig)))
     .pipe(htmlMin(HTMLMinConfig))
     .pipe(dest(buildFolder));
-
-export default HTMLHandler;
