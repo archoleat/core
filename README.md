@@ -1,12 +1,12 @@
 # Core
 
-![Test](https://img.shields.io/github/actions/workflow/status/Archoleat/core/mocha.yaml?label=Test)
-![Commitlint](https://img.shields.io/github/actions/workflow/status/Archoleat/core/commitlint.yaml?label=Commitlint)
-![CodeQL](https://img.shields.io/github/actions/workflow/status/Archoleat/core/codeql.yaml?label=CodeQL)
-![Editorconfig](https://img.shields.io/github/actions/workflow/status/Archoleat/core/editorconfig.yaml?label=Editorconfig)
-![Prettier](https://img.shields.io/github/actions/workflow/status/Archoleat/core/prettier.yaml?label=Prettier)
-![ESLint](https://img.shields.io/github/actions/workflow/status/Archoleat/core/eslint.yaml?label=ESLint)
-![Markdown](https://img.shields.io/github/actions/workflow/status/Archoleat/core/markdown.yaml?label=Markdown)
+![Test](https://img.shields.io/github/actions/workflow/status/archoleat/core/mocha.yaml?label=Test)
+![Commitlint](https://img.shields.io/github/actions/workflow/status/archoleat/core/commitlint.yaml?label=Commitlint)
+![CodeQL](https://img.shields.io/github/actions/workflow/status/archoleat/core/codeql.yaml?label=CodeQL)
+![Editorconfig](https://img.shields.io/github/actions/workflow/status/archoleat/core/editorconfig.yaml?label=Editorconfig)
+![Prettier](https://img.shields.io/github/actions/workflow/status/archoleat/core/prettier.yaml?label=Prettier)
+![ESLint](https://img.shields.io/github/actions/workflow/status/archoleat/core/eslint.yaml?label=ESLint)
+![Markdown](https://img.shields.io/github/actions/workflow/status/archoleat/core/markdown.yaml?label=Markdown)
 ![ESM Only](https://img.shields.io/badge/ESM-only-gray?labelColor=fe0)
 
 ## Table of Contents
@@ -18,7 +18,7 @@
 
 If you want to learn more about the core capability for **Archoleat Builder**
 then you can read the
-[**Archoleat Builder Wiki**](https://github.com/Archoleat/archoleat-builder/wiki).
+[**Archoleat Builder Wiki**](https://github.com/archoleat/archoleat-builder/wiki).
 
 ## License
 
