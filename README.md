@@ -12,6 +12,7 @@
 ## Table of Contents
 
 -   [Info](#info)
+-   [Contributing](#contributing)
 -   [License](#license)
 
 ## Info
@@ -20,7 +21,11 @@ If you want to learn more about the core capability for **Archoleat Builder**
 then you can read the
 [**Archoleat Builder Wiki**](https://github.com/archoleat/archoleat-builder/wiki).
 
+## Contributing
+
+Please read [**CONTRIBUTING**](https://github.com/archoleat/.github/blob/main/CONTRIBUTING.md)
+to start contributing.
+
 ## License
 
-This project is licensed under the Apache 2.0 license - see the
-[**LICENSE**](LICENSE) for details.
+This project is licensed under the [**Apache 2.0 license**](LICENSE).
