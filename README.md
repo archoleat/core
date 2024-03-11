@@ -17,9 +17,9 @@
 
 ## Info
 
-If you want to learn more about the core capability for **Archoleat Builder**
+If you want to learn more about the core capability for **Sammler**
 then you can read the
-[**Archoleat Builder Wiki**](https://github.com/archoleat/archoleat-builder/wiki).
+[**Sammler Wiki**](https://github.com/archoleat/sammler/wiki).
 
 ## Contributing
 
