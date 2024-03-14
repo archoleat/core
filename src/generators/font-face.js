@@ -20,7 +20,7 @@ import HELPERS from '../settings/helpers.js';
 import PLUGINS from '../settings/plugins.js';
 
 const {
-  REGEXPS: { VARIABLE_FONT_REGEX },
+  REGEXPS: { VARIABLE_FONT_PATTERN },
 } = HELPERS;
 
 const {
@@ -36,7 +36,7 @@ export default async (
   const fontFileURL = `src: url("../fonts/${fontFileName}.woff2") format("woff2")`;
   const fontFamilyName = `font-family: "${fontFamily}";`;
   const FONT_DISPLAY = 'font-display: swap;';
-  const fontFace = VARIABLE_FONT_REGEX.test(fontFileName)
+  const fontFace = VARIABLE_FONT_PATTERN.test(fontFileName)
     ? `@font-face {\n\t${fontFileURL} tech("variations");\n\t${fontFamilyName}\n\tfont-weight: 1 1000;\n\t${FONT_DISPLAY}\n}\n`
     : `@font-face {\n\t${fontFileURL};\n\t${fontFamilyName}\n\tfont-weight: ${fontWeight};\n\tfont-style: ${fontStyle};\n\t${FONT_DISPLAY}\n}\n`;
 

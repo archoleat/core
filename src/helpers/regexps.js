@@ -16,18 +16,18 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-const HTML_EXTENSION = '.html';
-const PUG_EXTENSION = '.pug';
-const SPLIT_CHARS = '(?:_|__|-|\\s)';
+const HTML_EXTENSION_PATTERN = '.html';
+const PUG_EXTENSION_PATTERN = '.pug';
+const SPLIT_CHARS_PATTERN = '(?:_|__|-|\\s)';
 
 export default {
-  HTML_EXTENSION,
-  PUG_EXTENSION,
-  FILE_EXTENSION: /.[^.]+$'/,
-  ITALIC_REGEX: new RegExp(`${SPLIT_CHARS}?(italic)`, 'i'),
-  JS_EXTENSION_REGEX: /.js$/,
-  NODE_MODULES_REGEX: /node_modules/,
-  PUG_EXTENSION_REGEX: new RegExp(`${PUG_EXTENSION}$`),
-  SCSS_EXTENSION_REGEX: /.s[ac]ss$/,
-  VARIABLE_FONT_REGEX: new RegExp(`${SPLIT_CHARS}?(var)`, 'i'),
+  HTML_EXTENSION_PATTERN,
+  PUG_EXTENSION_PATTERN,
+  FILE_EXTENSION_PATTERN: /\.[^\.]+$/,
+  ITALIC_PATTERN: new RegExp(`${SPLIT_CHARS_PATTERN}?(italic)`, 'i'),
+  JS_EXTENSION_PATTERN: /.js$/,
+  NODE_MODULES_PATTERN: /node_modules/,
+  PUG_EXTENSION_PATTERN_PATTERN: new RegExp(`${PUG_EXTENSION_PATTERN}$`),
+  SCSS_EXTENSION_PATTERN: /.s[ac]ss$/,
+  VARIABLE_FONT_PATTERN: new RegExp(`${SPLIT_CHARS_PATTERN}?(var)`, 'i'),
 };

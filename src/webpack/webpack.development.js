@@ -50,11 +50,11 @@ const {
 const {
   pugPages,
   REGEXPS: {
-    HTML_EXTENSION,
-    JS_EXTENSION_REGEX,
-    NODE_MODULES_REGEX,
-    PUG_EXTENSION_REGEX,
-    SCSS_EXTENSION_REGEX,
+    HTML_EXTENSION_PATTERN,
+    JS_EXTENSION_PATTERN,
+    NODE_MODULES_PATTERN,
+    PUG_EXTENSION_PATTERN_PATTERN,
+    SCSS_EXTENSION_PATTERN,
   },
 } = HELPERS;
 const { CopyPlugin, HtmlWebpackPlugin, join } = PLUGINS;
@@ -85,7 +85,10 @@ export default {
     ...pugPages.map(
       (pugPage) =>
         new HtmlWebpackPlugin({
-          filename: pugPage.replace(PUG_EXTENSION_REGEX, HTML_EXTENSION),
+          filename: pugPage.replace(
+            PUG_EXTENSION_PATTERN_PATTERN,
+            HTML_EXTENSION_PATTERN,
+          ),
           inject: false,
           minify: false,
           production: false,
@@ -110,14 +113,14 @@ export default {
   module: {
     rules: [
       {
-        test: JS_EXTENSION_REGEX,
-        exclude: NODE_MODULES_REGEX,
+        test: JS_EXTENSION_PATTERN,
+        exclude: NODE_MODULES_PATTERN,
         resolve: {
           fullySpecified: false,
         },
       },
       {
-        test: SCSS_EXTENSION_REGEX,
+        test: SCSS_EXTENSION_PATTERN,
         use: [
           'style-loader',
           {
@@ -143,7 +146,7 @@ export default {
         ],
       },
       {
-        test: PUG_EXTENSION_REGEX,
+        test: PUG_EXTENSION_PATTERN_PATTERN,
         use: [
           {
             loader: 'string-replace-loader',

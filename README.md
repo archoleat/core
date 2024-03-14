@@ -12,6 +12,7 @@
 ## Table of Contents
 
 -   [Info](#info)
+-   [Troubleshooting](#troubleshooting)
 -   [Contributing](#contributing)
 -   [License](#license)
 
@@ -20,6 +21,15 @@
 If you want to learn more about the core capability for **Sammler**
 then you can read the
 [**Sammler Wiki**](https://github.com/archoleat/sammler/wiki).
+
+## Troubleshooting
+
+If you are using **npm** you may get an error related to these plugins:
+
+-   `typescript-eslint/eslint-plugin`.
+-   `typescript-eslint/parser`.
+
+To fix this you can switch to **pnpm**(recommended) or install version `6.0.0`.
 
 ## Contributing
 

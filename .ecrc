@@ -1,7 +1,6 @@
 {
   "exclude": [
     "CHANGELOG.md",
-    "CONTRIBUTING.md",
     "font-face.js",
     "pnpm-lock.yaml",
     "README.md"
