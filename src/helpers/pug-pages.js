@@ -26,8 +26,8 @@ const {
   join,
   fs: { readdirSync },
 } = PLUGINS;
-const { PUG_EXTENSION } = REGEXPS;
+const { PUG_EXTENSION_PATTERN } = REGEXPS;
 
 export default readdirSync(join(SRC_FOLDER, PAGES_FOLDER)).filter((extension) =>
-  extension.endsWith(PUG_EXTENSION),
+  extension.endsWith(PUG_EXTENSION_PATTERN),
 );

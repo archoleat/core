@@ -25,7 +25,7 @@ const { fontFacesFile } = PATHS;
 const {
   trimString,
   typeChecker,
-  REGEXPS: { FILE_EXTENSION, ITALIC_REGEX },
+  REGEXPS: { FILE_EXTENSION_PATTERN, ITALIC_PATTERN },
 } = HELPERS;
 
 export default (fontsFiles) => {
@@ -53,13 +53,13 @@ export default (fontsFiles) => {
   let newFileOnly;
 
   for (const fontFile of fontsFiles) {
-    const [fontFileName] = fontFile.split(FILE_EXTENSION);
+    const [fontFileName] = fontFile.split(FILE_EXTENSION_PATTERN);
 
     if (newFileOnly !== fontFileName) {
       const [fontFamily, fontWeightValue] = fontFileName.split('-');
       const fontWeight =
-        FONT_WEIGHTS[trimString(fontWeightValue, ITALIC_REGEX) ?? 'regular'];
-      const fontStyle = ITALIC_REGEX.test(fontFileName) ? 'italic' : 'normal';
+        FONT_WEIGHTS[trimString(fontWeightValue, ITALIC_PATTERN) ?? 'regular'];
+      const fontStyle = ITALIC_PATTERN.test(fontFileName) ? 'italic' : 'normal';
 
       generateFontFace(fontFacesFile, {
         fontFileName,
