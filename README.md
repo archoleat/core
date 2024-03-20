@@ -1,6 +1,6 @@
 # Core
 
-![Test](https://img.shields.io/github/actions/workflow/status/archoleat/core/mocha.yaml?label=Test)
+![Test](https://img.shields.io/github/actions/workflow/status/archoleat/core/test.yaml?label=Test)
 ![Commitlint](https://img.shields.io/github/actions/workflow/status/archoleat/core/commitlint.yaml?label=Commitlint)
 ![CodeQL](https://img.shields.io/github/actions/workflow/status/archoleat/core/codeql.yaml?label=CodeQL)
 ![Editorconfig](https://img.shields.io/github/actions/workflow/status/archoleat/core/editorconfig.yaml?label=Editorconfig)
@@ -23,6 +23,9 @@ then you can read the
 [**Sammler Wiki**](https://github.com/archoleat/sammler/wiki).
 
 ## Troubleshooting
+
+> \[!WARNING]
+> Developers Only.
 
 If you are using **npm**, you may get a `peerDependency` error
 that is related to these plugins:
