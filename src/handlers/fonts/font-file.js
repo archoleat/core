@@ -16,6 +16,8 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
+import validateFontFileName from '@archoleat/validate-font-file-name';
+
 import PATHS from '../../settings/paths.js';
 import HELPERS from '../../settings/helpers.js';
 
@@ -28,7 +30,7 @@ const {
   REGEXPS: { FILE_EXTENSION_PATTERN, ITALIC_PATTERN },
 } = HELPERS;
 
-export default (fontsFiles) => {
+export default async (fontsFiles) => {
   typeChecker(fontsFiles, 'fontsFiles', 'array');
 
   const FONT_WEIGHTS = {
@@ -53,22 +55,28 @@ export default (fontsFiles) => {
   let newFileOnly;
 
   for (const fontFile of fontsFiles) {
-    const [fontFileName] = fontFile.split(FILE_EXTENSION_PATTERN);
+    if (await validateFontFileName(fontFile)) {
+      const [fontFileName] = fontFile.split(FILE_EXTENSION_PATTERN);
 
-    if (newFileOnly !== fontFileName) {
-      const [fontFamily, fontWeightValue] = fontFileName.split('-');
-      const fontWeight =
-        FONT_WEIGHTS[trimString(fontWeightValue, ITALIC_PATTERN) ?? 'regular'];
-      const fontStyle = ITALIC_PATTERN.test(fontFileName) ? 'italic' : 'normal';
+      if (newFileOnly !== fontFileName) {
+        const [fontFamily, fontWeightValue] = fontFileName.split('-');
+        const fontWeight =
+          FONT_WEIGHTS[trimString(fontWeightValue, ITALIC_PATTERN) ?? 'regular'];
+        const fontStyle = ITALIC_PATTERN.test(fontFileName) ? 'italic' : 'normal';
 
-      generateFontFace(fontFacesFile, {
-        fontFileName,
-        fontFamily,
-        fontWeight,
-        fontStyle,
-      });
+        generateFontFace(fontFacesFile, {
+          fontFileName,
+          fontFamily,
+          fontWeight,
+          fontStyle,
+        });
 
-      newFileOnly = fontFileName;
+        newFileOnly = fontFileName;
+      }
+    }
+
+    if (!await validateFontFileName(fontFile)) {
+      await validateFontFileName(fontFile);
     }
   }
 };
