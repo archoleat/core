@@ -12,7 +12,6 @@
 ## Table of Contents
 
 -   [Info](#info)
--   [Troubleshooting](#troubleshooting)
 -   [Contributing](#contributing)
 -   [License](#license)
 
@@ -21,27 +20,6 @@
 If you want to learn more about the core capability for **Sammler**
 then you can read the
 [**Sammler Wiki**](https://github.com/archoleat/sammler/wiki).
-
-## Troubleshooting
-
-> \[!WARNING]
-> Developers Only.
-
-If you are using **npm**, you may get a `peerDependency` error
-that is related to these plugins:
-
--   `typescript-eslint/eslint-plugin`.
--   `typescript-eslint/parser`.
-
-To fix this you can switch to **pnpm**(recommended) or install version `6.0.0`:
-
-```shell
-typescript-eslint/eslint-plugin@6.0.0
-```
-
-```shell
-typescript-eslint/parser@6.0.0
-```
 
 ## Contributing
 
