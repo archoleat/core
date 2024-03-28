@@ -16,16 +16,16 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import FLAGS from '../helpers/flags.js';
-import REGEXPS from '../helpers/regexps.js';
+import { FLAGS } from '../helpers/flags.js';
+import { REGEXPS } from '../helpers/regexps.js';
 
-import notifier from '../helpers/notifier.class.js';
-import pugPages from '../helpers/pug-pages.js';
-import status from '../helpers/status.js';
-import trimString from '../helpers/trim-string.js';
-import typeChecker from '../helpers/type-checker.js';
+import { notifier } from '../helpers/notifier.class.js';
+import { pugPages } from '../helpers/pug-pages.js';
+import { status } from '../helpers/status.js';
+import { trimString } from '../helpers/trim-string.js';
+import { typeChecker } from '../helpers/type-checker.js';
 
-export default {
+const HELPERS = {
   FLAGS,
   REGEXPS,
   notifier,
@@ -34,3 +34,5 @@ export default {
   trimString,
   typeChecker,
 };
+
+export { HELPERS };

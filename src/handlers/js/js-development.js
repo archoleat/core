@@ -16,14 +16,14 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PLUGINS from '../../settings/plugins.js';
+import { PLUGINS } from '../../settings/plugins.js';
 
 import webpackConfig from '../../webpack/webpack.production.js';
 
-import outputConfig from '../../configs/output.config.js';
-import PROJECT_CONFIG from '../../configs/project.config.js';
+import { outputConfig } from '../../configs/output.config.js';
+import { PROJECT_CONFIG } from '../../configs/project.config.js';
 
-import formatterJS from '../../formatters/js.js';
+import { JSFormatter } from '../../formatters/js.js';
 
 const { entry } = PROJECT_CONFIG;
 const { TerserPlugin } = PLUGINS;
@@ -51,4 +51,7 @@ webPackBeautifyConfig.optimization = {
 };
 webPackBeautifyConfig.output = outputConfig(`${entry ?? 'main'}.js`);
 
-export default () => formatterJS('JSDevelopmentHandler', webPackBeautifyConfig);
+const JSDevelopmentHandler = () =>
+  JSFormatter('JSDevelopmentHandler', webPackBeautifyConfig);
+
+export { JSDevelopmentHandler };

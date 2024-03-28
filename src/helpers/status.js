@@ -16,14 +16,16 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PLUGINS from '../settings/plugins.js';
+import { PLUGINS } from '../settings/plugins.js';
 
 const {
   fs: { existsSync },
 } = PLUGINS;
 
-export default {
+const status = {
   state(file, state) {
     return existsSync(file) && state ? 'Update' : 'Added';
   },
 };
+
+export { status };

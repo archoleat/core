@@ -16,18 +16,20 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
-import PLUGINS from '../settings/plugins.js';
+import { PATHS } from '../settings/paths.js';
+import { PLUGINS } from '../settings/plugins.js';
 
-import PROJECT_CONFIG from '../configs/project.config.js';
+import { PROJECT_CONFIG } from '../configs/project.config.js';
 
 const { removes } = PROJECT_CONFIG;
 const { GIT_KEEP_FILE, buildFolder, cacheFolder } = PATHS;
 const { deleteAsync } = PLUGINS;
 
-export default deleteAsync([
+const reset = deleteAsync([
   GIT_KEEP_FILE,
   cacheFolder,
   buildFolder,
   ...(removes ?? []),
 ]);
+
+export { reset };

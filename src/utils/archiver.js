@@ -16,9 +16,9 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
-import HELPERS from '../settings/helpers.js';
-import PLUGINS from '../settings/plugins.js';
+import { PATHS } from '../settings/paths.js';
+import { HELPERS } from '../settings/helpers.js';
+import { PLUGINS } from '../settings/plugins.js';
 
 const { buildFolder, cacheFolder, rootFolder } = PATHS;
 const { notifier } = HELPERS;
@@ -28,8 +28,10 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-export default () =>
+const archiver = () =>
   src(join(buildFolder, '**/*'))
     .pipe(notifier.errorHandler('zip'))
     .pipe(zipPlugin(`${rootFolder}.zip`))
     .pipe(dest(cacheFolder));
+
+export { archiver };

@@ -16,9 +16,9 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
-import HELPERS from '../settings/helpers.js';
-import PLUGINS from '../settings/plugins.js';
+import { PATHS } from '../settings/paths.js';
+import { HELPERS } from '../settings/helpers.js';
+import { PLUGINS } from '../settings/plugins.js';
 
 const {
   build: { js: jsBuild },
@@ -30,7 +30,7 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-export default (taskName, config) =>
+const JSFormatter = (taskName, config) =>
   src(jsSource)
     .pipe(notifier.errorHandler(taskName))
     .pipe(
@@ -39,3 +39,5 @@ export default (taskName, config) =>
       }),
     )
     .pipe(dest(jsBuild));
+
+export { JSFormatter };

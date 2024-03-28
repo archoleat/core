@@ -16,8 +16,8 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import HELPERS from '../settings/helpers.js';
-import PLUGINS from '../settings/plugins.js';
+import { HELPERS } from '../settings/helpers.js';
+import { PLUGINS } from '../settings/plugins.js';
 
 const {
   REGEXPS: { VARIABLE_FONT_PATTERN },
@@ -29,7 +29,7 @@ const {
   },
 } = PLUGINS;
 
-export default async (
+const generateFontFace = async (
   fontFacesFile,
   { fontFileName, fontFamily, fontWeight, fontStyle },
 ) => {
@@ -42,3 +42,5 @@ export default async (
 
   await appendFile(fontFacesFile, fontFace);
 };
+
+export { generateFontFace };

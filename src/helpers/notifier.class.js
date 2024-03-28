@@ -16,11 +16,11 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PLUGINS from '../settings/plugins.js';
+import { PLUGINS } from '../settings/plugins.js';
 
-import PROJECT_CONFIG from '../configs/project.config.js';
+import { PROJECT_CONFIG } from '../configs/project.config.js';
 
-import FormatterMessage from '../formatters/message.js';
+import { FormatterMessage } from '../formatters/message.js';
 
 const {
   notifier: { isNotify, sound },
@@ -57,4 +57,4 @@ class Notifier extends FormatterMessage {
 
 const notifier = new Notifier(isNotify ?? true);
 
-export default notifier;
+export { notifier };

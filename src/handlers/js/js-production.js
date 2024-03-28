@@ -16,8 +16,10 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import webpackConfig from '../../webpack/webpack.production.js';
+import { webpackConfig } from '../../webpack/webpack.production.js';
 
-import formatterJS from '../../formatters/js.js';
+import { JSFormatter } from '../../formatters/js.js';
 
-export default () => formatterJS('JSProductionHandler', webpackConfig);
+const JSProductionHandler = () => JSFormatter('JSProductionHandler', webpackConfig);
+
+export { JSProductionHandler };

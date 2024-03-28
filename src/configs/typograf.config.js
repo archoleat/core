@@ -16,11 +16,11 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PROJECT_CONFIG from './project.config.js';
+import { PROJECT_CONFIG } from './project.config.js';
 
 const { language } = PROJECT_CONFIG;
 
-export default {
+const typografConfig = {
   locale: language ?? 'en-US' === 'ru' ? ['ru', 'en-US'] : ['en-US'],
   enableRule: [
     'common/html/e-mail',
@@ -38,3 +38,5 @@ export default {
     'ru/other/accent',
   ],
 };
+
+export { typografConfig };

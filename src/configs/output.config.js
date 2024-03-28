@@ -16,17 +16,19 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
+import { PATHS } from '../settings/paths.js';
 
-import PROJECT_CONFIG from './project.config.js';
+import { PROJECT_CONFIG } from './project.config.js';
 
 const { buildFolder } = PATHS;
 const {
   server: { publicPath },
 } = PROJECT_CONFIG;
 
-export default (fileName) => ({
+const outputConfig = (fileName) => ({
   publicPath,
   filename: fileName,
   path: buildFolder,
 });
+
+export { outputConfig };

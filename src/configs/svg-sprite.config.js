@@ -16,13 +16,13 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
+import { PATHS } from '../settings/paths.js';
 
-import SVGOConfig from './SVGO.config.js';
+import { SVGOConfig } from './SVGO.config.js';
 
 const { spriteFile } = PATHS;
 
-export default {
+const SVGSpriteConfig = {
   mode: {
     symbol: {
       sprite: spriteFile,
@@ -44,3 +44,5 @@ export default {
     },
   },
 };
+
+export { SVGSpriteConfig };
