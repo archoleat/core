@@ -16,11 +16,11 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
-import HELPERS from '../settings/helpers.js';
-import PLUGINS from '../settings/plugins.js';
+import { PATHS } from '../settings/paths.js';
+import { HELPERS } from '../settings/helpers.js';
+import { PLUGINS } from '../settings/plugins.js';
 
-import webpCSSConfig from '../configs/webp-css.config.js';
+import { webpCSSConfig } from '../configs/webp-css.config.js';
 
 const {
   CSS_COMB_CONFIG_FILE,
@@ -39,7 +39,7 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-export default (isWebp) =>
+const CSSHandler = (isWebp) =>
   src(join(cssBuild, 'style.css'))
     .pipe(notifier.errorHandler('CSSHandler'))
     .pipe(groupCssMediaQueries())
@@ -50,3 +50,5 @@ export default (isWebp) =>
     .pipe(cleanCss({ level: 2 }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(dest(cssBuild));
+
+export { CSSHandler };

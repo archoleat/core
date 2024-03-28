@@ -20,7 +20,7 @@ const HTML_EXTENSION_PATTERN = '.html';
 const PUG_EXTENSION_PATTERN = '.pug';
 const SPLIT_CHARS_PATTERN = '(?:_|__|-|\\s)';
 
-export default {
+const REGEXPS = {
   HTML_EXTENSION_PATTERN,
   PUG_EXTENSION_PATTERN,
   FILE_EXTENSION_PATTERN: /\.[^\.]+$/,
@@ -31,3 +31,5 @@ export default {
   SCSS_EXTENSION_PATTERN: /.s[ac]ss$/,
   VARIABLE_FONT_PATTERN: new RegExp(`${SPLIT_CHARS_PATTERN}?(var)`, 'i'),
 };
+
+export { REGEXPS };

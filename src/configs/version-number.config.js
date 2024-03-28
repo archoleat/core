@@ -16,9 +16,9 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
+import { PATHS } from '../settings/paths.js';
 
-import PROJECT_CONFIG from './project.config.js';
+import { PROJECT_CONFIG } from './project.config.js';
 
 const {
   html: {
@@ -27,7 +27,7 @@ const {
 } = PROJECT_CONFIG;
 const { versionFile } = PATHS;
 
-export default {
+const versionNumberConfig = {
   value: format ?? '%DT%',
   append: {
     key: 'v',
@@ -38,3 +38,5 @@ export default {
     file: versionFile,
   },
 };
+
+export { versionNumberConfig };

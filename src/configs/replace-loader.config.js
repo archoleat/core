@@ -16,12 +16,14 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
+import { PATHS } from '../settings/paths.js';
 
 const { IMAGES_FOLDER } = PATHS;
 
-export default ({ startPath }) => ({
+const replaceLoaderConfig = ({ startPath }) => ({
   flags: 'g',
   replace: `${startPath}img`,
   search: `@${IMAGES_FOLDER}`,
 });
+
+export { replaceLoaderConfig };

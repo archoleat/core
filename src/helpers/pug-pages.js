@@ -16,10 +16,10 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
-import PLUGINS from '../settings/plugins.js';
+import { PATHS } from '../settings/paths.js';
+import { PLUGINS } from '../settings/plugins.js';
 
-import REGEXPS from './regexps.js';
+import { REGEXPS } from './regexps.js';
 
 const { PAGES_FOLDER, SRC_FOLDER } = PATHS;
 const {
@@ -28,6 +28,8 @@ const {
 } = PLUGINS;
 const { PUG_EXTENSION_PATTERN } = REGEXPS;
 
-export default readdirSync(join(SRC_FOLDER, PAGES_FOLDER)).filter((extension) =>
+const pugPages = readdirSync(join(SRC_FOLDER, PAGES_FOLDER)).filter((extension) =>
   extension.endsWith(PUG_EXTENSION_PATTERN),
 );
+
+export { pugPages };

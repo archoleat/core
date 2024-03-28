@@ -16,10 +16,12 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PLUGINS from '../settings/plugins.js';
+import { PLUGINS } from '../settings/plugins.js';
 
 const { argv } = PLUGINS;
 
-export default {
+const FLAGS = {
   isUpdate: argv.includes('--update'),
 };
+
+export { FLAGS };

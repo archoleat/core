@@ -16,9 +16,9 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PLUGINS from '../settings/plugins.js';
+import { PLUGINS } from '../settings/plugins.js';
 
-import typeChecker from '../helpers/type-checker.js';
+import { typeChecker } from '../helpers/type-checker.js';
 
 const {
   chalk: { blueBright, gray, magenta, yellow, green, red },
@@ -86,4 +86,4 @@ class FormatterMessage {
   };
 }
 
-export default FormatterMessage;
+export { FormatterMessage };

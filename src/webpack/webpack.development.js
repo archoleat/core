@@ -16,17 +16,17 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
-import HELPERS from '../settings/helpers.js';
-import PLUGINS from '../settings/plugins.js';
+import { PATHS } from '../settings/paths.js';
+import { HELPERS } from '../settings/helpers.js';
+import { PLUGINS } from '../settings/plugins.js';
 
-import CSSLoaderConfig from '../configs/css-loader.config.js';
-import outputConfig from '../configs/output.config.js';
-import PROJECT_CONFIG from '../configs/project.config.js';
-import replaceLoaderConfig from '../configs/replace-loader.config.js';
-import resolveConfig from '../configs/resolve.config.js';
+import { CSSLoaderConfig } from '../configs/css-loader.config.js';
+import { outputConfig } from '../configs/output.config.js';
+import { PROJECT_CONFIG } from '../configs/project.config.js';
+import { replaceLoaderConfig } from '../configs/replace-loader.config.js';
+import { resolveConfig } from '../configs/resolve.config.js';
 
-import serverConfig from './webpack.server.js';
+import { serverConfig } from './webpack.server.js';
 
 const {
   entry,

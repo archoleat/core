@@ -16,13 +16,13 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PROJECT_CONFIG from './project.config.js';
+import { PROJECT_CONFIG } from './project.config.js';
 
 const {
   images: { optimizationLevel },
 } = PROJECT_CONFIG;
 
-export default {
+const imageMinConfig = {
   optimizationLevel: optimizationLevel ?? 3,
   interlaced: true,
   svgoPlugins: [
@@ -31,3 +31,5 @@ export default {
     },
   ],
 };
+
+export { imageMinConfig };

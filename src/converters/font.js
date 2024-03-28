@@ -16,9 +16,9 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
-import HELPERS from '../settings/helpers.js';
-import PLUGINS from '../settings/plugins.js';
+import { PATHS } from '../settings/paths.js';
+import { HELPERS } from '../settings/helpers.js';
+import { PLUGINS } from '../settings/plugins.js';
 
 const {
   fontFacesFile,
@@ -34,7 +34,7 @@ const {
   fs: { existsSync },
 } = PLUGINS;
 
-export default (taskName, extension) => {
+const convertFont = (taskName, extension) => {
   typeChecker(extension, 'extension', 'string');
 
   const woff2 = join(fontsSource, '*.woff2');
@@ -54,3 +54,5 @@ export default (taskName, extension) => {
     .pipe(src(woff2))
     .pipe(dest(fontsBuild));
 };
+
+export { convertFont };

@@ -16,11 +16,11 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
-import HELPERS from '../settings/helpers.js';
-import PLUGINS from '../settings/plugins.js';
+import { PATHS } from '../settings/paths.js';
+import { HELPERS } from '../settings/helpers.js';
+import { PLUGINS } from '../settings/plugins.js';
 
-import fontFileHandler from '../handlers/fonts/font-file.js';
+import { fontFileHandler } from '../handlers/fonts/font-file.js';
 
 const {
   fontFacesFile,
@@ -34,7 +34,7 @@ const {
   },
 } = PLUGINS;
 
-export default async (isUpdate) => {
+const generateFontFacesFile = async (isUpdate) => {
   const TASK_NAME = 'generateFontFacesFile';
   const SCRIPT_NAME = 'fonts';
   const fontFacesFileExists = existsSync(fontFacesFile) && !isUpdate;
@@ -66,3 +66,5 @@ export default async (isUpdate) => {
     });
   }
 };
+
+export { generateFontFacesFile };

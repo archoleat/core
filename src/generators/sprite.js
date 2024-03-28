@@ -16,11 +16,11 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../settings/paths.js';
-import HELPERS from '../settings/helpers.js';
-import PLUGINS from '../settings/plugins.js';
+import { PATHS } from '../settings/paths.js';
+import { HELPERS } from '../settings/helpers.js';
+import { PLUGINS } from '../settings/plugins.js';
 
-import SVGSpriteConfig from '../configs/svg-sprite.config.js';
+import { SVGSpriteConfig } from '../configs/svg-sprite.config.js';
 
 const {
   SRC_FOLDER,
@@ -38,7 +38,7 @@ const {
   },
 } = PLUGINS;
 
-export default async (isUpdate) => {
+const generateSprite = async (isUpdate) => {
   const TASK_NAME = 'generateSprite';
   const SCRIPT_NAME = 'sprite';
   const spriteSvg = join(SRC_FOLDER, spriteFile);
@@ -73,3 +73,5 @@ export default async (isUpdate) => {
     });
   }
 };
+
+export { generateSprite };

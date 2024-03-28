@@ -1,6 +1,6 @@
 import { assert, describe, test } from 'vitest';
 
-import trimString from '../src/helpers/trim-string.js';
+import { trimString } from '../src/helpers/trim-string.js';
 
 describe('trimString', () => {
   test('should remove vowels from a string', () => {

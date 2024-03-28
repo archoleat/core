@@ -1,6 +1,6 @@
 import { assert, describe, test } from 'vitest';
 
-import typeChecker from '../src/helpers/type-checker.js';
+import { typeChecker } from '../src/helpers/type-checker.js';
 
 describe('typeChecker', () => {
   test('should not throw an error for a valid array argument', () => {

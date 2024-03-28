@@ -16,11 +16,11 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PATHS from '../../settings/paths.js';
-import HELPERS from '../../settings/helpers.js';
-import PLUGINS from '../../settings/plugins.js';
+import { PATHS } from '../../settings/paths.js';
+import { HELPERS } from '../../settings/helpers.js';
+import { PLUGINS } from '../../settings/plugins.js';
 
-import imageMinConfig from '../../configs/image-min.config.js';
+import { imageMinConfig } from '../../configs/image-min.config.js';
 
 const {
   build: { images: imagesBuild },
@@ -35,7 +35,7 @@ const {
   gulp: { dest, src },
 } = PLUGINS;
 
-export default (isWebp) =>
+const imageHandler = (isWebp) =>
   src(imagesSource)
     .pipe(notifier.errorHandler('imageHandler'))
     .pipe(newer(imagesBuild))
@@ -47,3 +47,5 @@ export default (isWebp) =>
     .pipe(dest(imagesBuild))
     .pipe(src(svgSource))
     .pipe(dest(imagesBuild));
+
+export { imageHandler };

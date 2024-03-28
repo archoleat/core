@@ -16,13 +16,13 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import PROJECT_CONFIG from './project.config.js';
+import { PROJECT_CONFIG } from './project.config.js';
 
 const {
   html: { isMinify },
 } = PROJECT_CONFIG;
 
-export default {
+const HTMLMinConfig = {
   collapseBooleanAttributes: true,
   collapseWhitespace: isMinify ?? false,
   minifyCSS: true,
@@ -31,3 +31,5 @@ export default {
   removeEmptyAttributes: true,
   removeRedundantAttributes: true,
 };
+
+export { HTMLMinConfig };

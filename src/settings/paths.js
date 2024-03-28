@@ -18,9 +18,9 @@
 
 import { basename, resolve } from 'node:path';
 
-import PROJECT_CONFIG from '../configs/project.config.js';
+import { PROJECT_CONFIG } from '../configs/project.config.js';
 
-import PLUGINS from './plugins.js';
+import { PLUGINS } from './plugins.js';
 
 const {
   entry,
@@ -42,7 +42,7 @@ const cacheFolder = location ?? '.cache';
 const rootFolder = basename(resolve());
 const svgSpriteFiles = join(SRC_FOLDER, IMAGES_FOLDER, SVG_SPRITE_FOLDER, '*.svg');
 
-export default {
+const PATHS = {
   ASSETS_FOLDER,
   IMAGES_FOLDER,
   PAGES_FOLDER,
@@ -82,3 +82,5 @@ export default {
     svg: [join(SRC_FOLDER, IMAGES_FOLDER, '**/*.svg'), `!${svgSpriteFiles}`],
   },
 };
+
+export { PATHS };

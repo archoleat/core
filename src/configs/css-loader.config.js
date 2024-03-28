@@ -16,7 +16,11 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-export default ({ endPath = '', importLoaders = 0, isSourceMap = false } = {}) => ({
+const CSSLoaderConfig = ({
+  endPath = '',
+  importLoaders = 0,
+  isSourceMap = false,
+} = {}) => ({
   importLoaders,
   modules: false,
   sourceMap: isSourceMap,
@@ -26,3 +30,5 @@ export default ({ endPath = '', importLoaders = 0, isSourceMap = false } = {}) =
     },
   },
 });
+
+export { CSSLoaderConfig };

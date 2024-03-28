@@ -16,12 +16,12 @@
 //
 ////////////////////////////////////////////////////////////////////////////
 
-import validateFontFileName from '@archoleat/validate-font-file-name';
+import { validateFontFileName } from '@archoleat/validate-font-file-name';
 
-import PATHS from '../../settings/paths.js';
-import HELPERS from '../../settings/helpers.js';
+import { PATHS } from '../../settings/paths.js';
+import { HELPERS } from '../../settings/helpers.js';
 
-import generateFontFace from '../../generators/font-face.js';
+import { generateFontFace } from '../../generators/font-face.js';
 
 const { fontFacesFile } = PATHS;
 const {
@@ -30,7 +30,7 @@ const {
   REGEXPS: { FILE_EXTENSION_PATTERN, ITALIC_PATTERN },
 } = HELPERS;
 
-export default async (fontsFiles) => {
+const fontFileHandler = async (fontsFiles) => {
   typeChecker(fontsFiles, 'fontsFiles', 'array');
 
   const FONT_WEIGHTS = {
@@ -75,8 +75,10 @@ export default async (fontsFiles) => {
       }
     }
 
-    if (!await validateFontFileName(fontFile)) {
+    if (!(await validateFontFileName(fontFile))) {
       await validateFontFileName(fontFile);
     }
   }
 };
+
+export { fontFileHandler };
