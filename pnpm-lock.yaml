@@ -15,8 +15,8 @@ devDependencies:
     specifier: ^1.1.1
     version: 1.1.1
   '@archoleat/validate-font-file-name':
-    specifier: ^1.0.5
-    version: 1.0.5
+    specifier: ^1.0.9
+    version: 1.0.9
   '@commitlint/cli':
     specifier: ^19.2.1
     version: 19.2.1(@types/node@20.12.3)(typescript@5.4.3)
@@ -134,8 +134,8 @@ packages:
     engines: {node: '>=20.0.0', npm: '>=10.0.0', pnpm: '>=8.0.0'}
     dev: true
 
-  /@archoleat/validate-font-file-name@1.0.5:
-    resolution: {integrity: sha512-sAFcFUNihYinLeQvzpOGzQ2rb9flsMX0Io5DcTRoKhc0AddVIc/a/TUp81as503Ib7f7Im5TTeM+JNkillCtpA==}
+  /@archoleat/validate-font-file-name@1.0.9:
+    resolution: {integrity: sha512-5YBXgm0aGbjfbzhDAFN3DpwrHCvtLmFuTbeTx+WWStGegYbRZ6KZ7ERB7euGy44d2NuJ1ywE92bH+PMgRC2eHg==}
     engines: {node: '>=20.0.0', npm: '>=10.0.0', pnpm: '>=8.0.0'}
     dependencies:
       chalk: 5.3.0
