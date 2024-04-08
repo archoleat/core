@@ -9,14 +9,14 @@ devDependencies:
     specifier: ^1.0.2
     version: 1.0.2
   '@archoleat/eslint-flat-compatibility':
-    specifier: ^1.1.0
-    version: 1.1.0
+    specifier: ^1.1.3
+    version: 1.1.3
   '@archoleat/semantic-release-define-config':
-    specifier: ^1.1.1
-    version: 1.1.1
+    specifier: ^1.1.3
+    version: 1.1.3
   '@archoleat/validate-font-file-name':
-    specifier: ^1.0.5
-    version: 1.0.5
+    specifier: ^1.0.9
+    version: 1.0.9
   '@commitlint/cli':
     specifier: ^19.2.1
     version: 19.2.1(@types/node@20.12.3)(typescript@5.4.3)
@@ -60,8 +60,8 @@ devDependencies:
     specifier: ^2.29.1
     version: 2.29.1(@typescript-eslint/parser@7.5.0)(eslint@8.57.0)
   eslint-plugin-unicorn:
-    specifier: ^51.0.1
-    version: 51.0.1(eslint@8.57.0)
+    specifier: ^52.0.0
+    version: 52.0.0(eslint@8.57.0)
   globals:
     specifier: ^15.0.0
     version: 15.0.0
@@ -118,24 +118,25 @@ packages:
       '@commitlint/types': 19.0.3
     dev: true
 
-  /@archoleat/eslint-flat-compatibility@1.1.0:
-    resolution: {integrity: sha512-6kaykCjiScGZfJTFWOzgV6COw9yyQLfplDztqlQHRYFZvLf98x6tPCyaiC5ExobzVNlL7NnvTffGz88S5x7kQQ==}
+  /@archoleat/eslint-flat-compatibility@1.1.3:
+    resolution: {integrity: sha512-N4vhRU5GvGMlhkyIbK0A6Xx6d0RrARU7J45Qg/pWJ8/Ykh4YIJwtnqixNtERQzOVboxOzvXIRMZ0cbsIIbf9AA==}
     engines: {node: '>=20.0.0', npm: '>=10.0.0', pnpm: '>=8.0.0'}
     dependencies:
       '@eslint/eslintrc': 3.0.2
       '@types/eslint': 8.56.7
       '@types/eslint__eslintrc': 2.1.1
+      eslint-define-config: 2.1.0
     transitivePeerDependencies:
       - supports-color
     dev: true
 
-  /@archoleat/semantic-release-define-config@1.1.1:
-    resolution: {integrity: sha512-GQ7KW0wTROg5Zcz9QxWm0fTKv9P704mr8cUBwVai/H1lOIfWqhrwjXbTkr/Ya19Jm2o1vgalvTBQmKkJjaC7dA==}
+  /@archoleat/semantic-release-define-config@1.1.3:
+    resolution: {integrity: sha512-+S8Dwu4k1N5QzevIINux8Fuo/PZ6CFf/XxlIwlwdsc7LqaZxskyPvvWwRiJ8DKWcVzbhRJsIs11HE+Lk0xTDAw==}
     engines: {node: '>=20.0.0', npm: '>=10.0.0', pnpm: '>=8.0.0'}
     dev: true
 
-  /@archoleat/validate-font-file-name@1.0.5:
-    resolution: {integrity: sha512-sAFcFUNihYinLeQvzpOGzQ2rb9flsMX0Io5DcTRoKhc0AddVIc/a/TUp81as503Ib7f7Im5TTeM+JNkillCtpA==}
+  /@archoleat/validate-font-file-name@1.0.9:
+    resolution: {integrity: sha512-5YBXgm0aGbjfbzhDAFN3DpwrHCvtLmFuTbeTx+WWStGegYbRZ6KZ7ERB7euGy44d2NuJ1ywE92bH+PMgRC2eHg==}
     engines: {node: '>=20.0.0', npm: '>=10.0.0', pnpm: '>=8.0.0'}
     dependencies:
       chalk: 5.3.0
@@ -2579,8 +2580,8 @@ packages:
       - supports-color
     dev: true
 
-  /eslint-plugin-unicorn@51.0.1(eslint@8.57.0):
-    resolution: {integrity: sha512-MuR/+9VuB0fydoI0nIn2RDA5WISRn4AsJyNSaNKLVwie9/ONvQhxOBbkfSICBPnzKrB77Fh6CZZXjgTt/4Latw==}
+  /eslint-plugin-unicorn@52.0.0(eslint@8.57.0):
+    resolution: {integrity: sha512-1Yzm7/m+0R4djH0tjDjfVei/ju2w3AzUGjG6q8JnuNIL5xIwsflyCooW5sfBvQp2pMYQFSWWCFONsjCax1EHng==}
     engines: {node: '>=16'}
     peerDependencies:
       eslint: '>=8.56.0'
