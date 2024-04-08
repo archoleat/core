@@ -1,6 +1,6 @@
 # Core
 
-![Test](https://img.shields.io/github/actions/workflow/status/archoleat/core/test.yaml?label=Test)
+![Specs](https://img.shields.io/github/actions/workflow/status/archoleat/core/spec.yaml?label=Specs)
 ![Commitlint](https://img.shields.io/github/actions/workflow/status/archoleat/core/commitlint.yaml?label=Commitlint)
 ![CodeQL](https://img.shields.io/github/actions/workflow/status/archoleat/core/codeql.yaml?label=CodeQL)
 ![Editorconfig](https://img.shields.io/github/actions/workflow/status/archoleat/core/editorconfig.yaml?label=Editorconfig)
