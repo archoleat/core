@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////
 //
 // Copyright 2023 Archoleat.
 //
@@ -14,17 +14,17 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////
 
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
-import { PATHS } from '../settings/paths.js';
-import { HELPERS } from '../settings/helpers.js';
-import { PLUGINS } from '../settings/plugins.js';
+import { PATHS } from '#paths';
+import { HELPERS } from '#helpers';
+import { PLUGINS } from '#plugins';
 
 import { CSSLoaderConfig } from '../configs/css-loader.config.js';
 import { outputConfig } from '../configs/output.config.js';
-import { PROJECT_CONFIG } from '../configs/project.config.js';
+import { PROJECT_CONFIG } from '#project-config';
 import { replaceLoaderConfig } from '../configs/replace-loader.config.js';
 import { resolveConfig } from '../configs/resolve.config.js';
 

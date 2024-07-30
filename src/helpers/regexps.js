@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////
 //
 // Copyright 2023 Archoleat.
 //
@@ -14,16 +14,16 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////
 
 const HTML_EXTENSION_PATTERN = '.html';
 const PUG_EXTENSION_PATTERN = '.pug';
-const SPLIT_CHARS_PATTERN = '(?:_|__|-|\\s)';
+const SPLIT_CHARS_PATTERN = String.raw`(?:_|__|-|\s)`;
 
 const REGEXPS = {
   HTML_EXTENSION_PATTERN,
   PUG_EXTENSION_PATTERN,
-  FILE_EXTENSION_PATTERN: /\.[^\.]+$/,
+  FILE_EXTENSION_PATTERN: /\.[^.]+$/,
   ITALIC_PATTERN: new RegExp(`${SPLIT_CHARS_PATTERN}?(italic)`, 'i'),
   JS_EXTENSION_PATTERN: /.js$/,
   NODE_MODULES_PATTERN: /node_modules/,

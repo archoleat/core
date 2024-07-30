@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////
 //
 // Copyright 2023 Archoleat.
 //
@@ -14,11 +14,11 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////
 
-import { PATHS } from '../../settings/paths.js';
-import { HELPERS } from '../../settings/helpers.js';
-import { PLUGINS } from '../../settings/plugins.js';
+import { PATHS } from '#paths';
+import { HELPERS } from '#helpers';
+import { PLUGINS } from '#plugins';
 
 import { imageMinConfig } from '../../configs/image-min.config.js';
 

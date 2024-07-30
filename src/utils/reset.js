@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////
 //
 // Copyright 2023 Archoleat.
 //
@@ -14,12 +14,12 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////
 
-import { PATHS } from '../settings/paths.js';
-import { PLUGINS } from '../settings/plugins.js';
+import { PATHS } from '#paths';
+import { PLUGINS } from '#plugins';
 
-import { PROJECT_CONFIG } from '../configs/project.config.js';
+import { PROJECT_CONFIG } from '#project-config';
 
 const { removes } = PROJECT_CONFIG;
 const { GIT_KEEP_FILE, buildFolder, cacheFolder } = PATHS;

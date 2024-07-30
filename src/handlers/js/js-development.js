@@ -1,4 +1,4 @@
-////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////
 //
 // Copyright 2023 Archoleat.
 //
@@ -14,14 +14,14 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 //
-////////////////////////////////////////////////////////////////////////////
+/// /////////////////////////////////////////////////////////////////////////
 
-import { PLUGINS } from '../../settings/plugins.js';
+import { PLUGINS } from '#plugins';
 
 import webpackConfig from '../../webpack/webpack.production.js';
 
 import { outputConfig } from '../../configs/output.config.js';
-import { PROJECT_CONFIG } from '../../configs/project.config.js';
+import { PROJECT_CONFIG } from '#project-config';
 
 import { JSFormatter } from '../../formatters/js.js';
 

@@ -34,9 +34,7 @@ jobs:
           token: ${{ steps.generate_token.outputs.token }}
 
       - name: Set Up PNPM
-        uses: pnpm/action-setup@v3
-        with:
-          version: 8
+        uses: pnpm/action-setup@v4
 
       - name: Set Up NodeJS
         uses: actions/setup-node@v4

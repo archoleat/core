@@ -17,6 +17,10 @@
 
 ## Info
 
+> ## ⚠️ DEPRECATED ⚠️
+> There will be no more support,
+> a new builder on vite is expected in the near future.
+
 If you want to learn more about the core capability for **Sammler**
 then you can read the
 [**Sammler Wiki**](https://github.com/archoleat/sammler/wiki).
